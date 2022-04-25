@@ -1,0 +1,19 @@
+<p>vendor-show works!</p>
+<table border="3">
+<tr>
+    <th>Vendor Id</th>
+    <th>Vendor Name</th>
+    <th>Vendor Phone</th>
+    <th>Vendor UserName</th>
+    <th>Vendor Password</th>
+    <th>Vendor Email</th>
+</tr>
+<tr *ngFor="let v of vendors">
+    <td>{{v.venId}} </td>
+    <td>{{v.venName}} </td>
+    <td>{{v.venPhnNo}} </td>
+    <td>{{v.venUsername}} </td>
+    <td>{{v.venPassword}} </td>
+    <td>{{v.venEmail}} </td>
+</tr>
+</table>
