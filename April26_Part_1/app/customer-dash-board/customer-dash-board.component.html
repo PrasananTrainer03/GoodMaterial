@@ -1,0 +1,36 @@
+<p>
+    Manager Name is : <b> 
+        {{manager}}
+    </b>
+</p>
+<p>
+    Customer Id : {{customer.cusId}}
+</p>
+<p>
+    Customer Id : {{customer.cusId}}
+</p>
+<p>
+    Customer Name : {{customer.cusName}}
+</p>
+<p>
+    Customer UserName : {{customer.cusPhnNo}}
+</p>
+<p>
+    Customer Email : {{customer.cusUsername}}
+</p>
+<p>
+    Customer Mobile : {{customer.cusEmail}}
+</p>
+<p>customer-dash-board works!</p>
+<a [routerLink]="['/customerDashBoard',{outlets: {'cms': ['customerShow']}}]"> Customer Show</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/customerDashBoard',{outlets: {'cms': ['customerOrders']}}]"> Customer Orders</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/customerDashBoard',{outlets: {'cms': ['customerPendingOrders']}}]"> Customer Pending Orders</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/customerDashBoard',{outlets: {'cms': ['customerWallet']}}]"> Customer Wallet</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/customerDashBoard',{outlets: {'cms': ['customerPlaceOrder']}}]"> Place Order</a> 
+
+<hr/>
+<router-outlet name="cms"></router-outlet>
