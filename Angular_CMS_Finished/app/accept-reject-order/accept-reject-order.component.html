@@ -1,0 +1,11 @@
+<p>accept-reject-order works!</p>
+Order Id : 
+<input type="number" name="oid" [(ngModel)]="oid" />
+<br/><br/>
+Vendor Id : 
+<input type="number" name="vid" [(ngModel)]="vid" /> 
+<Br/><br/>
+Status : 
+<input type="text" name="status" [(ngModel)]="status" /> 
+<br/><br/>
+<input type="button" value="Accept/Reject" (click)="acceptReject()" />

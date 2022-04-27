@@ -1,0 +1,25 @@
+<p>customer-orders works!</p>
+<table border="3" align="center">
+    <tr>
+        <th>Order Id</th>
+        <th>Vendor Id</th>
+        <th>Customer Id</th>
+        <th>Menu Id</th>
+        <th>Wallet Source</th>
+        <th>Order Quantity</th>
+        <th>Bill Amount</th>
+        <th>Order Status</th>
+        <th>Order Comments</th>
+    </tr>
+    <tr *ngFor="let o of orders">
+        <td>{{o.ordId}} </td>
+        <td>{{o.venId}} </td>
+        <td>{{o.cusId}} </td>
+        <td>{{o.menId}} </td>
+        <td>{{o.walSource}} </td>
+        <td>{{o.ordQuantity}} </td>
+        <td>{{o.ordBillamount}} </td>
+        <td>{{o.ordStatus}} </td>
+        <td>{{o.ordComments}} </td>
+    </tr>
+</table>

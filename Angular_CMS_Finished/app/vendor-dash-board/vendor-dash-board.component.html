@@ -1,0 +1,14 @@
+<p>vendor-dash-board works!</p>
+<a [routerLink]="['/vendorDashBoard',{outlets: {'cms': ['vendorShow']}}]"> Vendor Show</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/vendorDashBoard',{outlets: {'cms': ['vendorOrders']}}]"> Vendor Orders</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/vendorDashBoard',{outlets: {'cms': ['vendorPendingOrders']}}]"> Vendor Pending Orders</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/vendorDashBoard',{outlets: {'cms': ['acceptreject']}}]"> Accept Or Reject Order</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- <a [routerLink]="['/customerDashBoard',{outlets: {'cms': ['customerWallet']}}]"> Customer Wallet</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+<hr/>
+<router-outlet name="cms"></router-outlet>

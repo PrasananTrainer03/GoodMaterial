@@ -1,0 +1,14 @@
+<p>place-order works!</p>
+Customer Id : 
+<input type="number" name="cid" [(ngModel)]="cid" /> <br/><br/>
+Vendor Id : 
+<input type="number" name="vid" [(ngModel)]="vid" /> <br/><br/>
+Menu Id : 
+<input type="number" name="mid" [(ngModel)]="mid" /> <br/><br/>
+Wallet Source : 
+<input type="text" name="walSource" [(ngModel)]="walSource" /> <br/><br/>
+Order Quantity : 
+<input type="number" name="ordQty" [(ngModel)]="ordQty" /> <br/><br/> 
+Order Comments : 
+<input type="text" name="ordComments" [(ngModel)]="ordComments" /> <br/><br/>
+<input type="button" value="Place Order" (click)="placeOrder()" />
