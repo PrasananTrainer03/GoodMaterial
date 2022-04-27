@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: Dell
+Build-Jdk: 17.0.1
+Implementation-Title: Spring cloud eureka ribbon tutorial
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: jcg.tutorial.springcloud
+Implementation-URL: http://maven.apache.org
+Created-By: Maven Integration for Eclipse
+
