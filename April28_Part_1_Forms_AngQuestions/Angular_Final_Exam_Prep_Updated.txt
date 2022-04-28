@@ -1,0 +1,485 @@
+
+1) Angular Implemented on Which framework 
+
+Typescript
+
+2) It follows MVVM Architecture
+
+3) How to create an angular application 
+
+ng new Application_name
+
+4) In angular -g stands for 
+
+global
+
+5) How to Create a Component 
+
+ng g c Component_name 
+
+6) What are the testing frameworks avaialble in angular
+
+Karma
+Jasmine
+protractor 
+
+7) Module file will be identified by directive 
+
+@NgModule
+
+8) What are the different sections of Module file 
+
+declarations
+imports 
+providers
+bootStrap
+
+9) Assume, we created a component as DemoComponent, then it would be represented in angular app.module.ts file as 
+
+  a)  imports {
+	 AppComponent,                                        d) imports {
+         DemoComponent							AppComponent,
+      },								DemoComponent },
+      declarations : {						 declaration {
+         BrowserModule							AppComponent,
+      }									DemoComponent,BrowserModule},
+      providers : [],                                                  providers : [],
+								      boostrap :[AppComponent]
+      boostrap :[AppComponent]
+
+  b)  imports {
+	 AppComponent,
+         DemoComponent
+      },
+      declarations : {
+         BrowserModule,
+         AppComponent,
+         DemoComponent
+      }
+      providers : [],
+      boostrap :[AppComponent]
+   c)  imports {
+	 BrowserModule
+      },
+      declarations : {
+        AppComponent,DemoComponent
+      }
+      providers : [],
+      boostrap :[AppComponent]
+Answer : c
+_______________________________________________________________________________________________________________
+
+What Declarations Contains 
+
+	All Custom Compnents.
+What Imports Contains
+
+			All system defined directives like FormsModule, RouterModule etc...
+	
+
+What Providers Contains
+
+	All External Services.
+
+What BootStrap Contains 
+
+	Contains the default component to the loaded. 
+
+
+_______________________________________________________________________________________________________________________
+
+Component file will be identified by using Decorator
+
+@Component 
+
+Identify the correct syntax for Component Directive
+a) 
+selector : 'app-rout',
+templateUrl : './app.component.html',
+styleUrls:'./app.component.css'
+b) 
+selector : 'app-rout',
+templateUrl : './app.component.html',
+styleUrls:['./app.component.css']
+c) 
+selector : 'app-rout',
+templateUrl : '[./app.component.html]',
+styleUrls:'./app.component.css'
+d) 
+selector : 'app-rout',
+template : './app.component.html',
+styleUrls:['./app.component.css']
+
+Correct Answer: b
+
+Routing : 
+__________
+
+1) Which module allows you to implement the routing 
+
+import {RouterModule, Routes} from '@angular/routing';
+
+2) 
+
+const appRoutes : Routes = [
+path : 'First','FirstComponent',
+path :'Second','SecondComponent',
+path :'',HomeComponent,
+path :'**', InfoComponent
+]
+
+In the above paths 
+
+When it will go to HomeComponent
+
+Default component will be identified by using ''
+
+path :'**', InfoComponent means 
+
+ErrorComponent 
+
+How to Apply The Routing 
+
+Router.forRoot(appRoutes)
+
+Router.applyRoot(appRoutes)
+
+RouterModule.forRoot(appRoutes)
+
+RouterModule.forApplyRoot(appRoutes)
+
+
+Ans : 3
+
+You can place routing result as
+<rout> </rout>
+
+<rout-outlet></rout-outlet>
+
+<routing></routing>
+<router-outlet></router-outlet>
+
+Please give the syntax for redirecting to Path first using Anchor tag.
+
+const appRoutes : Routes = [
+path : 'First','FirstComponent',
+path :'Second','SecondComponent',
+path :'',HomeComponent,
+path :'**', InfoComponent
+]
+
+
+<a [routerLink]='["/First"]'>First</a>
+
+<a [routerLink]="['First']">First</a>
+
+Identify the Correct Answer :
+
+a)
+constructor(private _router : Router) {
+this._router.navigate('/First');
+}
+b)
+constructor(private _router : Router) {
+this._router.navigate('[/First]');
+}
+
+c)
+constructor(private _router : Router) {
+this._router.navigateUrl('[/First]');
+}
+ 
+d)
+constructor(private _router : Router) {
+this._router.navigate('(/First)');
+}
+
+
+Ans : 2
+
+All Node_Modules files information will be stored in which file 
+
+package.json
+
+Typescript version and compiler will be set by 
+
+tsconfig.json
+
+You can specify the interpolation binding as 
+
+{{ }}  
+{[]}
+{( )}
+([]) 
+
+
+You can specify two-Way binding as 
+
+[{ }]
+
+{[ ]}
+
+[( )]  ->Correct
+
+[[ ]]
+
+[(ngModel)] 
+
+
+You can specify property binding as 
+[{ }]
+
+{[ ]}
+
+[( )]  
+
+[ ] -> Correct
+
+You can specify event-binding as 
+
+[{ }]
+
+()  -> Correct
+
+[( )]  
+
+([ ])
+
+
+(click)
+
+(change) 
+
+How to Create a Service
+
+ng generate service service_name 
+
+Depenedency Injection will be applied to service by using which Decorator
+
+@Injectable 
+
+What is Dependency Injection 
+
+For working with services which module we have to import 
+
+import {Http} from '@angular/http'
+
+import {HttpClient' from '@angular/http/common'
+
+You have to import 
+
+HttpModule in app.module.ts file
+
+Identify the correct syntax : 
+
+constructor(private router : Router, private route : ActivatedRoute) {
+}
+
+You can pass parameters as 
+
+1) this.router.snapshot.parameters['name]
+
+2) this.route.snapshot.params['name']   
+
+3) this.route.snapshot.parameters['name']
+
+4) this.router.snapshot.parameters('name')
+
+
+Identify the Path url for routing parameters
+
+{path:'first/?id',component:FirstComponent'}
+
+{path:'first/:id:',component:FirstComponent'}
+
+{path:'first/:id',component:FirstComponent'}  - c
+
+{path:'first/:"id"',component:FirstComponent'}
+
+
+Idenfify the correct syntax for ngFor
+
+<div *ngFor="e of employ">
+
+<div *ngFor="let e in employ">
+
+<div *ngFor="let e of employ">  3
+
+<div *ngFor="let e for employ">
+
+
+Syntax for ngIf
+
+<div *ngIf="age > 30">
+</div>
+
+[ngStyle] : used to give inline styles to document,
+
+Idenfity the correct syntax for ngSwitch
+
+<ul [ngSwitch]="person"> 
+<li *ngSwitchCase="'Mohan'">Hello Mohan</li> 
+<li *ngSwitchCase="'Sohan'">Hello Sohan</li> 
+<li *ngSwitchCase="'Vijay'">Hello Vijay</li> 
+<li *ngSwitchDefault>Bye Bye</li>
+ </ul> 
+
+
+Angular Life Cycle :
+____________________
+
+1) Constructor : This is the first event fired in angular which contains default properties of class/component, and data to be stored in controls and data to be populated. 
+
+[] => property binding 
+
+() => Event Binding 
+
+[()] => Two-Way 
+
+2) ngOnChanges : Responds when angular sets the data-bound properties, it checks simple changes of object {current/previous}.
+
+3) ngOnInit : Initializes the component after angular first displays the data-bind properties and sets the directive/comopnent input properites, initializaing any services/external data. 
+
+4) ngDoCheck : Detect and act upon changes, it is called during the change of code/template of given application. 
+
+5) ngAfterConetntInit : Responds after angular checks any external content projected into angular component. 
+
+6) ngAfterContentChecked : Responds after the content binded to the component and any changes are reflected w.r.t. Binding. 
+
+7) ngAfterViewInit : Responds after angular loads the component view {parent/child views} 
+
+8) ngAfterViewChecked : Responds once the data transfer from parent view to child view successfully. 
+
+9) ngDestroy
+
+___________________________________________________________________________________________
+
+Angular Validations
+
+valid  -> Checks all validations are correct
+invalid -> returns invalid if any validations are failed.
+touched -> You placed cursor or not
+untouched -> Returns true if the control not touched (not placed cursor)
+dirty -> Control contains invalid value 
+pristine -> Cleanliness of the form. {Value changed and it contains valid value which ensures the form control is clean} 
+
+Syntax for Template-Driven Forms 
+
+<form #employForm="ngForm" (ngSubmit)="onFormSubmit(employForm)">
+</form>
+
+
+In Reactive Forms, we cannot use two-way binding 
+
+Now all validations and controls creation can be done in component file w.r.t. predfined classes 
+
+FormGroup, FormControl etc...
+
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
+Add this in app.module.ts file
+
+
+<form [formGroup]="employForm" (ngSubmit)="onFormSubmit()">
+  Employ No : 
+  <input formControlName="empno"> <br/><br/> 
+  <div *ngIf="employForm.get('empno').invalid && isValidFormSubmitted !=null && 
+  !isValidFormSubmitted">
+    <p>
+      Please Enter Employ No...
+    </p>
+  </div>
+  Employ Name : 
+  <input formControlName="name"> <br/><br/> 
+  <div *ngIf="employForm.get('name').invalid && isValidFormSubmitted !=null && 
+  !isValidFormSubmitted">
+    <p>
+      Please Enter Employ Name...
+    </p>
+  </div>
+  Department : 
+  <input formControlName="dept"> <br/><br/> 
+  <div *ngIf="employForm.get('dept').invalid && isValidFormSubmitted !=null && 
+  !isValidFormSubmitted">
+    <p>
+      Please Enter Department Name...
+    </p>
+  </div>
+  Designation : 
+  <input formControlName="desig"> <br/><br/> 
+  <div *ngIf="employForm.get('desig').invalid && isValidFormSubmitted !=null && 
+  !isValidFormSubmitted">
+    <p>
+      Please Enter Designation Name...
+    </p>
+  </div>
+  Basic : 
+  <input formControlName="basic"> <br/><br/>
+  <div *ngIf="employForm.get('basic').invalid && isValidFormSubmitted !=null && 
+  !isValidFormSubmitted">
+    <p>
+      Please Enter Basic Value...
+    </p>
+  </div>
+  <input type="submit" value="Submit Form" />
+</form>
+
+<p *ngIf="isValidFormSubmitted">
+Form Submitted Successfully
+</p>
+
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+
+  employForm = new FormGroup({
+    empno: new FormControl('',Validators.required),  
+    name: new FormControl('',Validators.required),  
+    dept: new FormControl('',Validators.required),  
+    desig: new FormControl('',Validators.required),  
+    basic: new FormControl('',Validators.required),  
+  })
+
+
+Identify the valid directives in Angular
+
+ngFor    -> Yes
+
+ngStyle  -> yes
+
+ngClass -> Yes
+
+ngSwitch -> Yes
+
+ngIf  -> Yes
+
+ngIfElse -> No
+
+ngDoWhile -> No
+
+ngError - Yes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,90 @@
+Angular Purely works on the basis of MVVM architecture. 
+
+Model-View/View-Model 
+
+Module : 
+
+When you run any angular application, at first it starts execution from app.module.ts file,
+
+in that we have different sections as 
+
+declarations :
+
+   Contains List of Custom Components
+
+imports : 
+	
+	Contains list of system defined imports for the given project. 
+
+providers : 
+
+	Contains list of services available in the current project. 
+
+bootStrap 
+
+	Which component we are supposed to run, to be defined in the bootStrap. 
+
+You can identify the module file with decorator 
+
+@NgModule 
+
+Angular is all about component, 
+
+as any business logic you have to write, that must be specified in component only. 
+
+
+You can create a component 
+
+
+ng g c component_name
+
+You can idenfify component by using decorator as
+
+@Component 
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+Used to display the component, then please use the selector. 
+
+templateUrl : For that particular component, which is the relevant html file to display data, to be given in templateUrl 
+
+styleUrls : Contains list of css files, which allows you to make look and feel of the given component. 
+
+You can create a class in angular as 
+
+ng generate class class_name 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

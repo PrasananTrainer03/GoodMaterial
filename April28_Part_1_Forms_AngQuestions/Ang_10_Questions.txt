@@ -1,0 +1,77 @@
+1) What is Single Page Application
+
+
+2) What is the Purpose of module in angular
+
+3) What are the different sections of module file
+
+declarations
+
+	Contains List of custom components available in angular
+imports
+	Contains system defined modules required to run the program.
+providers
+	Any external services to be injected to this page
+
+bootStrap
+
+	Which component we have to run as default component.
+
+
+
+4) How module file will be decorated
+
+@NgModule
+
+5) How angular project will be executed (Execution Process)
+
+	Once you start the project as (npm start), then first it loads the app.module.ts file 
+	
+	In that it checks all components, piples, filters, services etc... and then it goes to the bootstrap and in that
+	which component defined that component will be loaded. 
+
+	Then it need to load all dependencies (node_modules), as all node_modules are registered in the file 
+	package.json file, from that it lists all dependencies and loads all dependencies. 
+
+	After processing all data, browser converts server-script into client-script and sends the data to 
+	index.html where we can interpret over code. 
+
+
+
+
+
+
+6) How to Create a component, and how to add component to the page
+
+ng g c comp_name  
+Then copy the selector tag from ts file and paste in html tags of target page.
+
+7) What the purpose of routing
+
+Navigate from one page to another page.
+
+Navigate w.r.t. HTML ex : <a [routerLink] = "['menu']">Menu</a>
+Navigate w.r.t. Ts ex : this._router.navigate(["/menu"]);
+
+8) How to apply routing on the page (explain step by step)
+
+   -> How to redirect to default component : 
+
+	{path:'', component:HomeComponent}
+
+
+   -> How to go to error component 
+
+	{path:'**', component:ErrorComponent}
+
+    -> How to make placeHolder for routing 
+
+	<router-outlet> </router-outlet>
+9) Give the syntax for component file (selector,tempalateUrl,styleUrls etc...)
+@Component({
+  selector: 'app-placeorder',
+  templateUrl: './htmfilel',
+  styleUrls: ['./css']
+})
+
+

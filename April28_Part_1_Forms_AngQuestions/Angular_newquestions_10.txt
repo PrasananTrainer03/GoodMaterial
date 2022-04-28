@@ -1,0 +1,20 @@
+1) Explain about types of bindings with examples
+
+2) Explain about depedency injection in details (Example with dependency what is code/without dependecy what is code)
+
+3) Explain about more about observables in services
+
+4) Explain about routing procedure in detail
+
+5) What is the purpose of localStorage
+
+6) What are the types of forms we have
+
+7) What is Difference between Template (vs) Reactive
+
+8) Explain about pipes in detail
+
+9) Explain about services in detail
+
+10) Explain the procedure to implement paging in angular
+

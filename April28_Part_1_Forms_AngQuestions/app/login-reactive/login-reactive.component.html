@@ -1,0 +1,22 @@
+<p>login-reactive works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+    User Name : 
+    <input formControlName="userName">
+    <div *ngIf="loginForm.get('userName').invalid &&
+    isValidFormSubmitted != null && 
+    !isValidFormSubmitted"> 
+      User Name required. 
+      </div>
+      <br/>
+      Password 
+      <input type="password" formControlName="passWord">
+      <div *ngIf="loginForm.get('passWord').invalid &&
+      isValidFormSubmitted != null && 
+      !isValidFormSubmitted"> 
+        Password required. 
+        </div>
+        <br/><br/>
+    <input type="submit" value="Login" />
+</form>
+
+{{msg}}
