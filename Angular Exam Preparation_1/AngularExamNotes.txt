@@ -1,0 +1,276 @@
+1) Angular written in 
+
+  Typescript.
+
+2) Angular implements application in which framework 
+
+  MVVM
+
+3) Module can be prefixed with decorator 
+
+@NgModule
+
+4) In Module, custom components and pipes  will be defined in 
+
+    declarations
+
+5) Which module required for forms and two-way binding 
+
+  FormsModule
+
+import {FormsModule} from '@angular/forms'
+
+6) If you want to call http services, which module to be used 
+
+    HttpModule, or HttpClientModule
+
+7) To give list of external services in module, then, we need
+
+   providers :[] 
+
+8)  You can define routing, by using 
+
+import {Router,RouterModule} from '@angular/routing' 
+
+import {RouterModule, Routes, OutletContext} from '@angular/router';
+
+9) const appRoutes : Routes = [ 
+  {path:'menu', component:MenuComponent,
+  children :
+  [
+    {path:'first', component:FirstComponent, outlet:'data'},
+    {path:'second', component:SecondComponent, outlet:'data'},
+    {path:'calc', component:CalcComponent, outlet:'data'},
+    {path:'employ', component:EmployComponent,outlet:'data'},
+    {path:'employlist', component:EmployListComponent,
+      outlet:'data'},
+  ]
+},
+  {path:'menu', component:MenuComponent},
+  {path:'', component:LoginComponent},
+];
+
+How to redirect to error component 
+
+  {path:'**', component:LoginComponent},
+
+You can go to routing by using 
+
+ RouterModule.forRoot(appRoutes)
+
+How to place the router content result (placeholder)
+
+<router-outlet></router-outlet>
+
+How to pass parameters from one component to another component. 
+
+ name:string;
+  constructor(private route: ActivatedRoute) {
+    this.name=this.route.snapshot.params["name"];
+   }  
+  ngOnInit() {
+  }
+
+You can navigate from one component to anther component as
+
+ constructor(private router : Router) {
+   
+  }
+  third() {
+    this.router.navigate(['/Third']);
+  }
+
+What is the syntax for routerLink
+
+<a [routerLink] = "['/Second']">Second</a> 
+
+How to implement interporlation 
+
+{{ }}
+
+How to implement two-way binding 
+
+[(ngModel)] 
+
+How to give event-biding 
+
+(click) 
+
+(change) 
+
+How to give property biding 
+
+[name]="name" 
+
+What @Component decorator contains 
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+How to create an angular application 
+
+ng new Application_name
+
+how to create a class 
+
+ng generate class class_name 
+
+how to create a service 
+
+ng generate service service_name
+
+how to create pipe
+
+ng generate pipe pipe_name
+
+how to create a component
+
+ng g c component 
+
+Which file loads all node_modules once you run the application 
+
+package.json 
+
+Dependency Injection can be provided by 
+
+@Injectable decorator 
+
+____________________________________________
+
+map() : this operator used to return collection or individual objects by casting data from json to class object vice versa. 
+
+http.get("http://localhost:8080/ftp/api").
+map(res => res.json()).
+filter(res => res.empno >= 10).
+catch(error);
+
+
+applyLeave() : Observable<string> 
+{
+  return http.post("http://.....").
+  map(res => res.text()).
+  catch(error);
+}
+
+
+subscribe method, used to capture the values which are returned by the Observable<string>. 
+
+It contains 3 options as
+
+subscribe(success,error,completed)
+
+syntax : 
+
+.subscribe(succ_code(),err_code());
+
+
+example : 
+
+result : string;
+
+this.employ.payRoll(this.emp).subscribe(
+    success => {
+       this.result=success;
+    },   
+    err => {
+       this.result=err;
+    }
+)
+
+
+Angular Life Cycle 
+___________________
+
+1) Constructor : This is the first event fired in angular which contains default properties of class/component, and data to be stored in controls and data to be populated. 
+
+[] => property binding 
+
+() => Event Binding 
+
+[()] => Two-Way 
+
+2) ngOnChanges : Responds when angular sets the data-bound properties, it checks simple changes of object {current/previous}.
+
+3) ngOnInit : Initializes the component after angular first displays the data-bind properties and sets the directive/comopnent input properites, initializaing any services/external data. 
+
+4) ngDoCheck : Detect and act upon changes, it is called during the change of code/template of given application. 
+
+5) ngAfterConetntInit : Responds after angular checks any external content projected into angular component. 
+
+6) ngAfterContentChecked : Responds after the content binded to the component and any changes are reflected w.r.t. Binding. 
+
+7) ngAfterViewInit : Responds after angular loads the component view {parent/child views} 
+
+8) ngAfterViewChecked : Responds once the data transfer from parent view to child view successfully. 
+
+9) ngDestroy
+
+Angular Testing : 
+__________________
+
+We have 2 types of testing as 
+
+1) Unit testing 
+
+2) E2E testing 
+
+______________________________________________________________________
+
+ng g c First 
+ng g c Second
+ng g c Third
+ng g c Menu
+
+ng generate service Demo
+
+@Injectable() decorator is needed when a service needs dependencies injected to its constructor. It is optional when a service does not need dependencies injected into it, but its common practice to use @Injectable() decorator for all services. 
+
+It is defined at class level. 
+
+In http services, we call the existing services which are implemted in another programming language, and invoke them by using Angular. 
+
+Http Service returns Promises which contains 2 values as 
+
+1) resolve : Comes when the service is successfully 		served. 
+
+2) reject : Comes when the service access fails 
+
+Drawbacks with Promises are, they will return only one value at a time, but during service requests data to be accessed asynchronously, then we use Observables instead of Promises. 
+
+Assume, we have to return list of users from the given service, 
+
+export class Users
+{
+   userName : string;
+   passWord : string;
+}
+
+To store the list of users returned by the service, then we need the help of Observable array. 
+
+Observable<User[]> 
+
+Assume, 
+
+https://jsonplaceholder.typicode.com/users 
+
+To call the http Serive initialize the object of http in the constructor first. 
+
+  constructor(private http : Http) {
+  }
+
+  getUsers() : Observable<User[]> 
+  {
+    return this.http.get("
+https://jsonplaceholder.typicode.com/users ").
+    toPromise().then(
+res => res.json() as User[]).catch(errorHandler);
+    
+  }
+
+ng g c UserShow
+
+
+

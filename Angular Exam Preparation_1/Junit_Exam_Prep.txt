@@ -1,0 +1,133 @@
+Junit allows you to perform unit testing. 
+
+1) Which Package allows you to perform junit 
+
+org.junit.Test 
+
+@Test 
+
+2) Which annotation used as if method to be executed only once in the entire test life cycle before test case
+
+    @BeforeClass 
+
+
+3) Which annotation used for everytime, the test case will be executed
+
+    @Before 
+
+
+4) Which annotation used for everytime, at the end of test case 
+
+    @After 
+
+
+5) Which annotation used only once, before closing the test case 
+
+    @AfterClass 
+
+
+
+ 
+
+
+7) What would be output for this program
+
+        int[] a=new int[]{1,2};
+        int[] b =new int[]{1,2};
+        assertArrayEquals("hello",a,b);
+
+
+7) What would be output for this program
+
+        int[] a=new int[]{1,2};
+        int[] b =new int[]{1,2};
+        assertArrayEquals("hello",a,b);
+
+If both arrays values are equal, it prints no message. 
+
+8)
+        int[] a=new int[]{1,2};
+        int[] b =new int[]{1,3};
+        assertArrayEquals("hello",a,b);
+
+
+If both arrays values are different, then it prints as caption with error message. 
+
+
+
+9)
+
+  assertEquals("Error in String","Hello","hello");
+
+Here, first arg is the error message caption
+
+	if values are same, it prints no message
+
+	if values are wrong, then it prints Caption message with System error message. First arg. always the caption error msg. 
+
+
+Identify the dependency for junit test case. 
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+
+
+10) Why we need JMOCK 
+
+
+It is a framework that which allows you to test database method. 
+
+It allows you to test data w.r.t. mock data instead of database records. 
+
+To start with JMOCK, we need to add the dependency to the project POM File. 
+
+
+<dependency>
+      <groupId>org.jmockit</groupId>
+      <artifactId>jmockit</artifactId>
+      <version>1.33</version>
+      <scope>test</scope>
+    </dependency>
+
+
+11) How to enable JMOCK in your project 
+
+@RunWith(JMockit.class)
+
+12) Expectations : This section contains the redirection code, means when you call the database method, instead of hitting the database which alternate data we have to provide to be given in expectations. 
+
+
+•	@Mocked: This annotation is used to provide a mock field/parameter for the class being tested. The type of the mock field or parameter can be any kind of reference type: 
+  public final void testListCount(@Mocked final EmployDAO dao) {
+  }
+
+Means, we are mocking the EmployDAO class, as it contains all sql statements, which hits the database. so we have to mock that class 
+
+import mockit.Mocked;
+
+MockUp : This contains the class in which we have to call the Database Methods (EmployDAO). 
+new MockUp<EmployFactory>() {
+      @Mock
+      EmployDAO dao() {
+        return dao;
+      }
+    };
+
+
+@Mock : This annotation which captures object of the class, that which hits the database. 
+
+
+
+
+
+
+
+
+
+
+
+
