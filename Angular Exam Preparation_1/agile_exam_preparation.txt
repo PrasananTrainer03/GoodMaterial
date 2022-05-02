@@ -94,9 +94,4 @@ ________
 
    3) User Story 
 
-Git/Unix -> 10
-
-Agile -> 5
-
-MySql -> 35 
 

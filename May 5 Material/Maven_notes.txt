@@ -1,0 +1,132 @@
+Agile : 
+________
+
+As per companys perspective at last we need to deliver defect free application to the client. 
+
+Quality : 
+
+1) WaterFall Model 
+
+2) V Model 
+
+	Verification
+
+	Validation 
+
+Validation : Your product is meeting all the client requirements or not that comes w.r.t. Validation.
+
+Verification : Whether you are following actual process or not, that comes w.r.t. Verification
+
+Agile : 
+________
+
+Daily Standup Meeting : 
+________________________
+
+
+1) What is POM stands for 
+
+
+Project Object Model
+
+2) Maven is a build tool, that which allows you create a project in easiest way.
+
+It has 2 folders as
+
+main
+test
+
+main module contains all the business logic
+test module contains all the test cases. 
+
+
+
+Maven overcomes the problems of adding jar files to the project. 
+
+Instead of adding jar files to the project, we need to add the dependencies to the 
+given project. 
+
+What the dependency contains 
+
+a) 
+<dependency>
+  <groupid>junit</groupid>
+  <artifactid>Junit 4.12</artifactid>
+  <version>4.12</version>
+<dependency>
+
+b)
+<dependency>
+  <groupid>junit</groupid>
+  <version>4.12</version>
+<dependency>
+
+c)
+<dependency>
+  <groupId>junit</groupId>
+  <artifactId>Junit4.12</artifactId>
+  <version>4.12</version>
+</dependency>
+
+d)
+
+<dependency>
+  <artifactId>Junit 4.12</artifactId>
+  <version>4.12</version>
+<dependency>
+
+__________________________________________________________________________
+
+
+Maven Architecture : 
+_____________________
+
+
+    Once you run any maven project, first it scans all pom.xml file and first, it checks
+the the jar files are available in 
+
+1) Local Repository 
+
+c:\users\user_name\.m2 folder 
+
+If it is not avaiable in local repository, then it goes to central repositry
+
+Still its not available then it goes to 
+
+remote repository
+
+Maven Life Cycle 
+_________________
+
+validate : Validates all the information for the project.
+
+Example : you gave version of mysql as 8.0.28 is it valid version or not, if it valid then get the jar file from repository,  (local/central/remote)
+
+compile : Used to compile source code
+
+mvn compile 
+
+test : Used to run the test cases 
+mvn test
+
+package : Used to make resource file for the compiled code
+
+mvn package 
+
+then it compiles/test and package the given code.
+
+integration test
+
+Deploys the jar/war files.
+
+verify
+
+install
+
+install the working project in given env.
+
+deploy 
+
+make an executable file for given working env. 
+
+

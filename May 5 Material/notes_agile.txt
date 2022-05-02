@@ -1,0 +1,336 @@
+Software Development Life Cycle (SDLC) 
+
+Is a process used by the software industry to design, develop and test high quality software. 
+
+Phases are available in SDLC
+
+	(i) Requirements Analysis
+
+	This is the fundamental stage of SDLC, it is performed by the senior
+members of team with inputs from the client. What are the inputs w.r.t
+	Software, Hardware, Manpower etc... All things will be measures in this 
+	phase.
+
+	(ii) Feasibility Study
+		Ensures that w.r.t. TImelines and product is it feasible to deliver the quality product 
+		or not, that comes w.r.t. Feasibility study. 
+
+	(iii) Design : It is heart w.r.t. Project env, that which gives you the blueprint of planning about the 			given project.  Here, SRS Document will be created at that point. (Software Requirement 			Specification)
+
+	 (iv) Coding 
+
+		Need to code the given product w.r.t.Specificed programming language. 
+
+	(v) Testing/Debugging 
+		Ensures that all the scenarios are covered and working fine according to the client requirement, that all wil be specified w.r.t. Testing. IN testing, if you identify any issues, then again it will be moved to Coding Phase. This is known as Feedback phase.
+		
+
+	(vi) Maintenance (Review)
+
+		Once the product tested successfully, it would be deployed or relased to actual usage, Product deployment happens in stages as per the business strategy of that organization. Whether is is sustaible in the current envioronment, and tomorrow if any changes comes those changes are also adoptable for this product or not means its upgradable, that comes w.r.t. Maintenance. 
+
+(i) Waterfall Model 
+
+	Linear sequential flow. 
+
+	Once phase to another phase we go in sequence. 
+
+	No Preview of the product
+	
+	Which may leads to strange results. 
+
+(ii) V Model 
+
+Verfication and Validation Model 
+
+Validation : Your product is meeting all the client requirements or not that comes w.r.t. Validation.
+
+Verification : Whether you are following actual process or not, that comes w.r.t. Verification
+
+
+Validation is all about product, and Verification is all about Process. 
+
+
+Agile : 
+
+  Agile is a software development methodology, which allows you to build software incrementally w..r.t Short iterations. 
+
+	These iterations we call as Sprint. 
+
+	Agile follows simple Principle as 
+
+		-> Design
+
+		-> Code
+
+		-> Integrate
+
+		-> Test
+
+
+ 	Roles of Agile
+
+		1) Scrum Master
+
+			Is a TL and facilitator who helps the team members to follow agile practices so that 				they can meet their commitments. 
+
+			Responsibilities of Scrum master
+
+			(a) Enable close co-opeartion between all roles and functions. 
+
+			(b) Remove the disturbances from the teams
+		
+			To ensure 
+
+			 -> Daily Standup 
+
+			 -> Planned Meetings
+
+			 -> Demo 
+
+			 -> Review
+
+			 -> Retrospective Meetings
+
+				What went well
+
+				What are improvements we need to do
+
+				What are areas to speedup the process. 
+
+
+		2) Product Owner
+
+			Who drives the product from business perspective. 
+
+		      -> To determine the requirements and prioritize their values
+
+		      -> To determine release date and contents.
+
+		      -> To take an active role in sprint planning and relase planning meetings
+
+		      -> To represent the voice of customer
+
+		      -> Accept the User Stores and acceptance criteria
+
+	User Story : 
+
+		Talks about what is to be done, it defines what a user needs. 
+
+		It defines how the functionality to be implemented
+
+		Stores are implemented by tasks, each story has collection of tasks. 
+
+		Tasks are estimated in hours, typically from 2 to 12 hrs. 
+
+		Example : Customer Module is the User Story it has Various Tasks as
+
+			-> Customer Authentication 4 hrs
+
+			-> Customer Registration 6 hrs
+
+			-> Customer Orders 2 hrs
+
+			-> Customer Payment 4 hrs
+
+			-> Customer DashBoard 10 hrs 
+
+		Total its to be finished in 26 hrs. 
+
+	Once stories are implemented, we need to validate the user story. 
+
+	User Stories are validated by using 
+
+	Acceptance Criteria 
+
+		-> All tasks are completed 
+
+		-> All acceptance tests (test cases) are running are passed
+
+		-> No open Defects
+
+		-> Product owner nees to accept the story
+
+		-> Deliverable to the end-user 
+
+
+	What is Daily Standup
+
+		It happens hardly for 15 to 30 mins everyday, 
+
+		Every member has to answer 3 important questions
+
+		   -> What i did yesterday
+
+		   -> What i will do today
+
+		   -> Any problem or my work blocked due to 
+
+	What are Agile Prioritization : 
+	
+	It follows MoSCoW Scheme 
+
+		Must Have
+
+		Should Have
+
+		Could Have
+
+		Wont Have
+
+	Scrum 
+
+	   It is a agile process that allows us to focus on delivering the high business value in the shortest 		time. 
+
+	   It allows us to rapidly and repeatedly inspect actual working software (every week or once in two weeks or monthly once) we need to inspect the product mandetory ensures we are following agile methodology. 
+
+	   The business sets the priorities
+
+	   Teams are self-organized to determine the best way to deliver the high priority features
+
+	   Every two weeks any one can see real working software and decide the release. 
+
+		3) Functional Team
+
+	Values : 
+
+	  Openness -> ANyone open to share their ideas
+
+	  Focus -> Task oriented
+
+	  Commitment -> Strict to the task completion w.r.t. Timelines 
+
+	 Respect the opinion
+
+	Visibility -> What happend and how its happend. 
+
+
+	Scrum execution Model : 
+
+	   Product Backlog
+
+		Prepared the product owner. 
+
+		Identies the customer requirements, and given the priorites and 
+		business values 
+
+		Should include all features visible t the customer, as well as the 
+		technical requirements needt to build the product. 
+
+		The highest priroity items in the product backlog needs to be broken down into small usings and estimagted and testable. These are called userstories.
+
+	   Sprint Backlog
+
+		It is an artifact of Spring planning Meeting. 
+
+		Whenever sprint meeting happens assume here the sprint happens weekly so far. 
+
+	Assume week1 we need to finish the modules as in customer Module
+
+
+	->Customer Authentication
+
+	-> Customer Dashboard
+
+	-> Customer Orders
+
+	-> Customer Orders Cancellation
+
+	-> Customer Feedback 
+
+IN the first sprint assume we are working on Customer Authentication and Customer Dashboard, that would be mentioned in Sprint Backlog. 
+
+    Scrum team selected and commited to deliver the features from the product backlog, these features are broken into user stories and w.r.t. Timeslines of 40 hrs as sprint weekly for 40 hrs 
+
+How to measure the work done (vs) work remaining in the sprint, 
+
+that can be done by BurnDown Chart 
+
+  -> Shows the cumulative work reamining in the sprint, w.r.t Day/by/Day
+
+   Used as a tool to guide the development team to successful completion of a sprint on time with 
+working code that is potentially shippable to the client. 
+
+Sprint 
+
+   Scrum projects make progress in a series of Sprints. 
+ 
+A sprint is an iterarion of work during which the product functionality getting implemented. 
+
+IN this sprint process, the product will be designed, coded and tested durint the sprint. 
+
+Typical duration for sprint is 2 to 4 weeks or a calendar month at most. 
+
+The sprint will be closed after 
+
+	-> Sprint Review Meeting
+
+	-> Sprint Retrospective Meeting
+
+*** No New requirements in the middle of sprint, if any new requirements, they will be moved to next sprint ***
+
+During the sprint, the ream must not be interrupted with additional requirest, Guaranteeing the team wont be allow to make real commitments it can be expected to keep. 
+
+Here, the tasks are estimated in hours 
+
+Example : Make any Vendor Module then estimate as
+
+Code in Middle Tier (8 hrs)
+Code in UI (4 hrs)
+Write Test Cases (4hrs)
+Code for Vendor Class (6 hrs)
+Update Performance Tests (2 hrs) 
+
+What is Sprint Review and Sprint Retrospective Meeting 
+
+Sprint Review 
+
+    Team presents what accomplished during the sprint.
+
+    Typically takes a demo of features of the current module
+
+    Whole team needs to be participated
+
+    *** Here, no scope for discussion, need to focus on new features implemented in this sprint ***
+
+Sprint Retrospective Meeting : 
+
+    Inspect and Adapt
+
+	Team checks the way they worked together in sprint and identifes all pros and cons
+
+	In this they check as
+
+	 -> What Went Well
+		
+	-> Wha could have been improved
+
+	-> What actions to be taken for the improvement. 
+
+Sprint Closure : 
+
+This can be done by Product Owner, needs to check all committed functionalities are implemented successfully, 
+then he closes the sprint. 
+
+Sprint Termination : 
+
+   Only in extreme cases, 
+
+    Teams cannot meet the sprint goal
+    
+    Product Owner terminates because of priority changes as per customer request
+
+    
+
+
+
+
+	   Daily Scrum Standup Meeting
+
+	   Sprint Meetings
+
+	   Shippable Product ready to Deliver to the customer 
+
+	  
+
+	   
