@@ -1,0 +1,610 @@
+What is Spring
+
+	Spring is a great framework, for defining enterprise level applications, if you want to make any application as light weight, as loosely coupled and tightly integrated, then we need the help of spring. 
+
+What is DI (Dependency Injection)
+
+	Object never lookup for resources its depending on.  DI is a feature that which allows you to bind the dependencies automatically to object, at the time of creation. 
+
+	When you write any java complex application, you need to make class as independent as possible of other java classes to increase the possibility to reuse these classes and to test them independently. Then the concept of DI comes into the picture. 
+
+Dependency injection can be happen in ways 
+
+	-> property injection
+
+	-> constructor injection
+
+DI is the heart for spring framework. 
+
+What is AOP (Aspect Oriented Programming) 
+
+One of the key compoents of spring is the AOP (Aspect Oriented Programming), where we need to create and dispence the beans. 
+
+In MCQ, expect questions from Bean Properties 
+
+Bean definition contains the information called configuration metadata, which is needed for the container
+
+	-> How to Create a bean
+
+	-> Beans life cycle
+
+	-> bean Dependencies 
+
+You can create a bean as
+
+<bean id="bean1" class="class_name">
+</bean> 
+
+
+	class : The attribute is mandetory, and specifies that the bean class to be used to create the bean. 
+
+	name : The attribute specifies the bean identifier uniquely, XML based configuration metadata. 
+
+	scope : Specifies the scope of the objects created from a particular bean definition 
+
+	constructor-arg : Contains list of arguments available in constructor
+
+	autowiring mode : 
+
+		Used to inject the dependencies and will be binded by name or type
+
+	Bean Scopes : 
+
+		1) Singleton
+
+			The scope the bean definition to a single instance. 
+
+		2) Prototype
+
+			It makes no.of objects as many you create
+
+		3) request
+
+			Specifies that the bean is avaialable for particular request
+
+		4) session
+
+			Ensures bean is available for particular session
+
+		5) global-session
+
+			Available at the valid context level.
+
+
+You can create a bean as 
+
+1) BeanFactory
+
+Syntax for BeanFactory
+
+BeanFactory  factory = new XmlBeanFactory(new FileInputStream("myBean.xml")); 
+
+2) ApplicationContext
+
+ApplicationContext ctx = new ClassPathXmlApplicationContext("fileName");
+
+ApplicationContext    context = new ClassPathXmlApplicationContext("bean.xml"); 
+
+Assume, we have class as 
+
+public class Greeting {
+     private String greet;
+    
+     // getters and setters
+
+}
+
+Write the correct syntax for apply, DI using bean 
+
+<bean id="bean1" class="Greeting">
+    <property name="greet" value="Good Morning..." /> 
+</bean>
+
+
+___________________________________________________________________________________________
+
+class Department {
+
+   private String deptId;
+   private String deptName;
+   // getters and setters 
+
+}
+
+class Employ {
+
+   private int empno;
+   private String name;
+   private double basic;  
+   private Department dept;
+   // getters and setters
+}
+
+
+<bean id="beanDepartment" class="Department">
+   <property name="deptId" value="1" /> 
+   <property name="deptName" value="Java" />    
+</bean>
+
+<bean id="beanEmploy" class="Employ">
+   <property name="empno" value="1" /> 
+   <property name="name" value="Manasvi" /> 
+   <property name="basic" value="84823" /> 
+-- write the synax to refer beanDepartment here 
+
+<property name="dept" ref="beanDepartment" /> 
+</bean>
+
+
+
+Autowiring Modes
+Following are the autowiring modes, which can be used to instruct the Spring container to use autowiring for dependency injection. You use the autowire attribute of the <bean/> element to specify autowire mode for a bean definition.
+
+Sr.No	Mode & Description
+1	no
+This is default setting which means no autowiring and you should use explicit bean reference for wiring. You have nothing to do special for this wiring. This is what you already have seen in Dependency Injection chapter.
+
+2	byName
+Autowiring by property name. Spring container looks at the properties of the beans on which autowire attribute is set to byName in the XML configuration file. It then tries to match and wire its properties with the beans defined by the same names in the configuration file.
+
+How to implement Autowiring 
+
+public class Person {
+
+	private int id;
+	private String name;
+	@Autowired
+	private JobDetails jobDetails;
+	private Family familyDetails;
+
+}
+
+
+For autowiring, we need to give default annotation config.
+
+<context:annotation-config/> 
+<bean id="beanAkshat" class="com.java.spr.Person">
+	<property name="id" value="1" />
+	<property name="name" value="Akshat"/>
+	<property name="familyDetails">
+		<bean class="com.java.spr.Family">
+			<property name="city" value="Lucknow"/>
+			<property name="state" value="UP"/>
+		</bean>
+	</property>
+</bean>   
+
+<bean id="jobDetails" class="com.java.spr.JobDetails">
+	<property name="job" value="Software Engineer"/>
+	<property name="company" value="Hexaware"/>
+	<property name="location" value="Chennai"/>
+</bean>
+
+
+Here the beanType and Name are same as jobDetails, so automatically it fetches and 
+binds the data. 
+
+You can specify bean types as
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <!-- Definition for textEditor bean -->
+   <bean id = "textEditor" class = "com.tutorialspoint.TextEditor" autowire = "byType">
+      <property name = "name" value = "Generic Text Editor" />
+   </bean>
+
+   <!-- Definition for spellChecker bean -->
+   <bean id = "SpellChecker" class = "com.tutorialspoint.SpellChecker"></bean>
+
+</beans>
+
+Spring Contains various collections as :
+_________________________________________
+
+
+<list>
+
+ : Contains list of beans as an entity.
+
+
+public class Student {
+
+	private int sno;
+	private String firstName;
+	private String lastName;
+	public int getSno() {
+		return sno;
+	}
+	public void setSno(int sno) {
+		this.sno = sno;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	@Override
+	public String toString() {
+		return "Student [sno=" + sno + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+	}
+	
+	
+}
+
+
+package com.java.hexaware.trainer;
+
+import java.util.List;
+
+public class Trainer {
+
+	private String trainerName;
+	private String location;
+	private List<Student> studentList;
+	
+	public String getTrainerName() {
+		return trainerName;
+	}
+	public void setTrainerName(String trainerName) {
+		this.trainerName = trainerName;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	public List<Student> getStudentList() {
+		return studentList;
+	}
+	public void setStudentList(List<Student> studentList) {
+		this.studentList = studentList;
+	}
+	
+	public void showInfo() {
+		System.out.println("Trainer Name  " +trainerName);
+		System.out.println("Location   " +location);
+		System.out.println("Students Info  ");
+		for (Student student : studentList) {
+			System.out.println(student);
+		}
+	}
+	
+}
+
+  <bean id="beanAryan" class="com.java.hexaware.trainer.Student">
+   	<property name="sno" value="1" />
+   	<property name="firstName" value="Aryan" />
+   	<property name="lastName" value="mishra"/>
+   </bean>
+    <bean id="beanNeha" class="com.java.hexaware.trainer.Student">
+   	<property name="sno" value="2" />
+   	<property name="firstName" value="Neha" />
+   	<property name="lastName" value="Kumari"/>
+   </bean>
+    <bean id="beanNanda" class="com.java.hexaware.trainer.Student">
+   	<property name="sno" value="3" />
+   	<property name="firstName" value="Krishna" />
+   	<property name="lastName" value="Nanda"/>
+   </bean>
+
+<bean id="trainerPrasanna" class="com.java.hexaware.trainer.Trainer">
+   	<property name="trainerName" value="Prasanna"/>
+   	<property name="location" value="Hyderabad" />
+   	<property name="studentList">
+   		<list>
+   			<ref bean="beanAryan"/>
+   			<ref bean="beanNeha"/>
+   			<ref bean="beanNanda"/>
+   		</list>
+   	</property>
+   </bean>
+
+<map>
+
+<set>
+
+<props>
+
+___________________________________________________________________________________________________
+
+import java.util.*;
+
+public class JavaCollection {
+   List addressList;
+   Set  addressSet;
+   Map  addressMap;
+   Properties addressProp;
+
+   // a setter method to set List
+   public void setAddressList(List addressList) {
+      this.addressList = addressList;
+   }
+   
+   // prints and returns all the elements of the list.
+   public List getAddressList() {
+      System.out.println("List Elements :"  + addressList);
+      return addressList;
+   }
+   
+   // a setter method to set Set
+   public void setAddressSet(Set addressSet) {
+      this.addressSet = addressSet;
+   }
+   
+   // prints and returns all the elements of the Set.
+   public Set getAddressSet() {
+      System.out.println("Set Elements :"  + addressSet);
+      return addressSet;
+   }
+   
+   // a setter method to set Map
+   public void setAddressMap(Map addressMap) {
+      this.addressMap = addressMap;
+   }
+   
+   // prints and returns all the elements of the Map.
+   public Map getAddressMap() {
+      System.out.println("Map Elements :"  + addressMap);
+      return addressMap;
+   }
+   
+   // a setter method to set Property
+   public void setAddressProp(Properties addressProp) {
+      this.addressProp = addressProp;
+   }
+   
+   // prints and returns all the elements of the Property.
+   public Properties getAddressProp() {
+      System.out.println("Property Elements :"  + addressProp);
+      return addressProp;
+   }
+}
+
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <!-- Definition for javaCollection -->
+   <bean id = "javaCollection" class = "com.tutorialspoint.JavaCollection">
+      
+      <!-- results in a setAddressList(java.util.List) call -->
+      <property name = "addressList">
+         <list>
+            <value>INDIA</value>
+            <value>Pakistan</value>
+            <value>USA</value>
+            <value>USA</value>
+         </list>
+      </property>
+
+      <!-- results in a setAddressSet(java.util.Set) call -->
+      <property name = "addressSet">
+         <set>
+            <value>INDIA</value>
+            <value>Pakistan</value>
+            <value>USA</value>
+            <value>USA</value>
+         </set>
+      </property>
+
+      <!-- results in a setAddressMap(java.util.Map) call -->
+      <property name = "addressMap">
+         <map>
+            <entry key = "1" value = "INDIA"/>
+            <entry key = "2" value = "Pakistan"/>
+            <entry key = "3" value = "USA"/>
+            <entry key = "4" value = "USA"/>
+         </map>
+      </property>
+      
+      <!-- results in a setAddressProp(java.util.Properties) call -->
+      <property name = "addressProp">
+         <props>
+            <prop key = "one">INDIA</prop>
+            <prop key = "one">INDIA</prop>
+            <prop key = "two">Pakistan</prop>
+            <prop key = "three">USA</prop>
+            <prop key = "four">USA</prop>
+         </props>
+      </property>
+   </bean>
+
+</beans>
+
+
+__________________________________________________________________________________________
+
+Where you can specify spring boot properties (filename) 
+
+application.properties
+
+@Bean - indicates that a method produces a bean to be managed 
+by Spring.
+• @Service - indicates that an annotated class is a service class.
+• @Repository - indicates that an annotated class is a repository, 
+which is an abstraction of data access and storage.
+• @Configuration - indicates that a class is a configuration class that 
+may contain bean definitions.
+• @Controller - marks the class as web controller, capable of handling 
+the requests.
+
+@Component is a generic stereotype for a Spring managed 
+component. It turns the class into a Spring bean at the auto-scan time.
+@Service: Indicates that an annotated class is a “Service”.
+@Repository: Indicates that an annotated class is a “Repository”. This 
+annotation serves as a specialization of @Component and advisable to 
+use with DAO classes.
+@Autowired: Autowired annotation is used for automatic injection of 
+beans. 
+@Qualifier annotation is used in conjunction with Autowired to avoid 
+confusion when we have two of more bean configured for same type
+
+
+@Controller
+This annotation is used to make a class as a web controller, which can handle 
+client requests and send a response back to the client.
+@RequestMapping
+The value attribute of @RequestMapping annotation is used to specify the URL 
+pattern
+@RequestParam
+This is another useful Spring MVC annotation that is used to bind HTTP 
+parameters into method arguments of handler methods.
+@PathVariable
+It enables the controller to handle a request for parameterized URLs.
+
+
+@RequestBody annotations tell the Spring to find a suitable message converter to 
+convert a resource representation coming from a client into an object.
+
+@RestController
+This is a convenience annotation for developing a RESTful web service with the 
+Spring MVC framework.
+@SprinbBootApplication is a single annotation combines three annotations like 
+@Configuration, @EnableAutoConfiguration, and @ComponentScan it run your 
+application without deploying it into a web server, as it comes with an embedded 
+Tomcat server.
+@EnableAutoConfiguration is a Spring boot annotation which enables the autoconfiguration feature, which makes Spring guess the configuration based on the 
+JAR presents in the classpath
+
+@ResponseStatus annotation is used to override the HTTP response code for a 
+response. You can use this annotation for error handling while developing a web 
+application or RESTful web service using Spring.
+@ResponseStatus annotation is used to override the HTTP response code for a 
+response. This annotation is for error handling while developing a web application 
+or RESTful web service using Spring
+
+
+4xx Status Codes (Client Error)
+Status Code
+Description
+400 Bad Request
+The request could not be understood by the server due to incorrect syntax. The client SHOULD NOT repeat the request without modifications.
+401 Unauthorized
+Indicates that the request requires user authentication information. The client MAY repeat the request with a suitable Authorization header field
+402 Payment Required (Experimental)
+Reserved for future use. It is aimed for using in the digital payment systems.
+403 Forbidden
+Unauthorized request. The client does not have access rights to the content. Unlike 401, the client’s identity is known to the server.
+404 Not Found
+The server can not find the requested resource.
+405 Method Not Allowed
+The request HTTP method is known by the server but has been disabled and cannot be used for that resource.
+406 Not Acceptable
+The server doesn’t find any content that conforms to the criteria given by the user agent in the Accept header sent in the request.
+407 Proxy Authentication Required
+Indicates that the client must first authenticate itself with the proxy.
+408 Request Timeout
+Indicates that the server did not receive a complete request from the client within the server’s allotted timeout period.
+409 Conflict
+The request could not be completed due to a conflict with the current state of the resource.
+410 Gone
+The requested resource is no longer available at the server.
+411 Length Required
+The server refuses to accept the request without a defined Content- Length. The client MAY repeat the request if it adds a valid Content-Length header field.
+412 Precondition Failed
+The client has indicated preconditions in its headers which the server does not meet.
+413 Request Entity Too Large
+Request entity is larger than limits defined by server.
+414 Request-URI Too Long
+The URI requested by the client is longer than the server can interpret.
+415 Unsupported Media Type
+The media-type in Content-type of the request is not supported by the server.
+416 Requested Range Not Satisfiable
+The range specified by the Range header field in the request can’t be fulfilled.
+417 Expectation Failed
+The expectation indicated by the Expect request header field can’t be met by the server.
+418 I’m a teapot (RFC 2324)
+It was defined as April’s lool joke and is not expected to be implemented by actual HTTP servers. (RFC 2324)
+420 Enhance Your Calm (Twitter)
+Returned by the Twitter Search and Trends API when the client is being rate limited.
+422 Unprocessable Entity (WebDAV)
+The server understands the content type and syntax of the request entity, but still server is unable to process the request for some reason.
+423 Locked (WebDAV)
+The resource that is being accessed is locked.
+424 Failed Dependency (WebDAV)
+The request failed due to failure of a previous request.
+425 Too Early (WebDAV)
+Indicates that the server is unwilling to risk processing a request that might be replayed.
+426 Upgrade Required
+The server refuses to perform the request. The server will process the request after the client upgrades to a different protocol.
+428 Precondition Required
+The origin server requires the request to be conditional.
+429 Too Many Requests
+The user has sent too many requests in a given amount of time (“rate limiting”).
+431 Request Header Fields Too Large
+The server is unwilling to process the request because its header fields are too large.
+444 No Response (Nginx)
+The Nginx server returns no information to the client and closes the connection.
+449 Retry With (Microsoft)
+The request should be retried after performing the appropriate action.
+450 Blocked by Windows Parental Controls (Microsoft)
+Windows Parental Controls are turned on and are blocking access to the given webpage.
+451 Unavailable For Legal Reasons
+The user-agent requested a resource that cannot legally be provided.
+499 Client Closed Request (Nginx)
+The connection is closed by the client while HTTP server is processing its request, making the server unable to send the HTTP header back.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3	byType
+Autowiring by property datatype. Spring container looks at the properties of the beans on which autowire attribute is set to byType in the XML configuration file. It then tries to match and wire a property if its type matches with exactly one of the beans name in configuration file. If more than one such beans exists, a fatal exception is thrown.
+
+4	constructor
+Similar to byType, but type applies to constructor arguments. If there is not exactly one bean of the constructor argument type in the container, a fatal error is raised.
+
+5	autodetect
+Spring first tries to wire using autowire by constructor, if it does not work, Spring tries to autowire by byType.
+
+You can use byType or constructor autowiring mode to wire arrays and other typed-collections.
+
+
+
+
+
+
+
+
+
+
