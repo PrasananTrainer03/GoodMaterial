@@ -1,0 +1,105 @@
+Mongodb we call as NO SQL,as it has the database functionalities, buts very much light weight and highly performance db tool. 
+
+To start with mongodb
+
+mongo
+
+
+To create a database 
+
+use database_name
+
+To see the current active database
+
+db
+
+To seee list of databases 
+
+show dbs
+
+current database will not show
+till u have data
+
+db.emp.insert({'empno':1,'name':'Prasanna','Salary':88633})
+
+To Drop the database we need
+
+db.dropDatabase()
+
+To create collection/table 
+
+db.createCollection()
+
+To see List of Collections 
+
+show collections
+
+To see the Data from given table/collections
+
+db.EmpNew.find()
+
+db.collection.find()
+
+db.EmpNew.find().pretty()
+
+To Display first record in MongoDb
+
+db.EmpNew.findOne()
+
+To Filter the data, we need
+
+db.EmpNew.find({"Name":"Prasanna"})
+
+db.emp.find({"Salary":{$gt:80000}})
+
+db.emp.find({"Salary":{$lt:80000}})
+
+To drop a collection,w e need
+
+db.COLLECTION_NAME.drop()
+
+db.empDetails.insertMany(
+	[
+		{
+			First_Name: "Radhika",
+			Last_Name: "Sharma",
+			Age: "26",
+			e_mail: "radhika_sharma.123@gmail.com",
+			phone: "9000012345"
+		},
+		{
+			First_Name: "Rachel",
+			Last_Name: "Christopher",
+			Age: "27",
+			e_mail: "Rachel_Christopher.123@gmail.com",
+			phone: "9000054321"
+		},
+		{
+			First_Name: "Fathima",
+			Last_Name: "Sheik",
+			Age: "24",
+			e_mail: "Fathima_Sheik.123@gmail.com",
+			phone: "9000054321"
+		}
+	]
+)
+
+To Insert multiple records follow above command
+
+ db.emp.find().limit(-2).pretty()
+
+To skip no.of records
+
+db.emp.find().skip(2)
+
+To Sort the data
+ db.emp.find().sort({"name":1})
+
+Projection you can implement as 
+
+db.emp.find({},{name:1,_id:0})
+
+1 means show
+
+0 means dont show
+
