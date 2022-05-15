@@ -1,0 +1,42 @@
+
+<table border="3">
+  <tr >
+    <th>empId</th>
+    <th>empName</th>
+    <th>empPhone</th>
+    <th>empEmail</th>
+    <th>empDept</th>
+    <th>empJoinDate</th>
+    <th>empMgrId</th>
+    <th>empLeaveBal</th>
+  </tr>
+  <tr *ngFor="let e of employs">
+    <td>
+       {{e.empId}}
+    </td>
+    <td>
+      {{e.empName}}
+    </td>
+    <td>
+      {{e.empMobile}}
+    </td>
+    <td>
+      {{e.empEmail}}
+    </td> 
+    <td>
+      {{e.empDptName}}
+    </td>
+    <td>
+      {{e.empDateOfJoin}}
+    </td>
+    <td>
+      {{e.empMgrId}}
+    </td>
+    <td>
+      {{e.empLeaveBalance}}
+    </td>
+    <td>
+      <button (click)="login(e.empId,e.empMgrId)" class="btn btn-success">Login</button>
+</td> 
+  </tr>
+</table>

@@ -1,0 +1,16 @@
+<p>
+  approve-deny works!
+</p>
+Manager Id : 
+<input type="number" name="empId" [(ngModel)]="empId" />
+<br/><br/> 
+Leave Id : 
+<input type="number" name="leaveId" [(ngModel)]="leaveId" />
+<br/><br/>
+Status : 
+<input type="text" name="status" [(ngModel)]="status" /> 
+<br/><br/>
+Manager Comments : 
+<input type="text" name="mgrComments" [(ngModel)]="mgrComments" /> 
+<br/><br/> 
+<input type="button" value="Approve/Deny" (click)="action()" />
