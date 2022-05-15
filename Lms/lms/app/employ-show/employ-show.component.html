@@ -1,0 +1,19 @@
+<p>
+  employ-show works!
+</p>
+<div style="text-align:bottom">
+       
+  <h2 style="color:brown;"> employ Section </h2>
+  <table width="100%" height=0 border="1" cellspacing="0" cellpadding="5"  bgcolor=lightgrey> 
+        <h5>  employ ID : {{ (employ | async)?.empId}}</h5>
+              
+        <h5>  employ Name :{{ (employ | async)?.empName }}</h5>
+              
+        <h5>  employ Department :{{ (employ| async)?.empDptName }}</h5>
+              
+        <h5> employ Phone :{{ (employ | async)?.empMobile}}</h5>
+  
+        <h5>  employ Email :{{ (employ | async)?.empEmail}}</h5>
+  
+      </table>
+</div>
