@@ -1,0 +1,13 @@
+http://localhost:1111
+http://localhost:1111/manideep
+http://localhost:1111/sindhu
+http://localhost:1111/manoj
+http://localhost:1111/greeting/Manoj
+http://localhost:1111/sum/12/5
+
+http://localhost:1111/empall
+http://localhost:1111/empSearch/1
+
+
+
+
