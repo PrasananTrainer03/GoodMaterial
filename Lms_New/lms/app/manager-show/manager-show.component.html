@@ -1,0 +1,24 @@
+Manager is : 
+{{mgrId}}
+<div *ngIf="mgrId > 0">
+       
+  <h2 style="color:brown;"> manager Section </h2>
+  <table width="100%" height=0 border="1" cellspacing="0" cellpadding="5"  bgcolor=lightgrey> 
+        <h5>  manager ID : {{ (manager | async)?.empId}}</h5>
+              
+        <h5>  manager Name :{{ (manager | async)?.empName }}</h5>
+              
+        <h5>  manager Department :{{ (manager| async)?.empDptName }}</h5>
+              
+        <h5> manager Phone :{{ (manager | async)?.empMobile}}</h5>
+  
+        <h5>  manager Email :{{ (manager | async)?.empEmail}}</h5>
+  
+      </table>
+  
+</div>
+<div *ngIf="mgrId==0">
+  <p>
+    No Manager...
+  </p>
+</div>

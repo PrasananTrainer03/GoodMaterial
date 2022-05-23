@@ -1,0 +1,102 @@
+<!-- <p>
+  Pending Records-history works!
+</p>
+<table border="3">
+  <tr>
+    <th>Leave Id</th>
+    <th>Leave StartDate</th>
+    <th>Leave EndDate</th>
+    <th>Leave No.of Days</th>
+    <th>Leave Reason</th>
+    <th>Leave Type</th>
+    <th>Leave Status</th>
+    <th>Leave AppliedOn</th>
+    <th>Manager Comments</th>
+    <th>Employ Id</th>
+  </tr>
+  <tr *ngFor="let leave of pending | async">
+    <td>
+      {{leave.leaveId}}
+    </td>
+    <td>
+      {{leave.leaveStartDate}}
+    </td>
+    <td>
+      {{leave.leaveEndDate}}
+    </td>
+    <td>
+      {{leave.leaveNoOfDays}}
+    </td>
+    <td>
+      {{leave.leaveReason}}
+    </td>
+    <td>
+      {{leave.leaveType}}
+    </td>
+    <td>
+      {{leave.leaveStatus}}
+    </td>
+    <td>
+      {{leave.leaveAppliedOn}}
+    </td>
+    <td>
+      {{leave.leaveManagerComments}}
+    </td>
+    <td>
+      {{leave.empId}}
+    </td>
+
+  </tr>
+</table>  -->
+<p>
+  pending works!
+</p>
+
+<table border="3">
+  <tr *ngFor="let e of employs | async">
+    <div *ngIf="e.empMgrId == mgrNo">
+      <th width="70">Employ Id : {{e.empId}}</th>
+       <th>Employee Name : {{e.empName}}</th>
+      <th>  Employee Leave Balance : {{e.empLeaveBalance}}       </th>
+      <tr border="3">
+          <th width="70">Leave ID</th>
+          <th>Employee ID</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Number Of Leaves</th>
+          <th>Leave Reason</th>
+          <th>Applied On</th>
+          <th>Manager Comments</th>
+          </tr>
+    </div>
+    <table border ="3">
+        <div *ngFor="let ld of pending | async" (click)="setClickRowDup(ld.leaveId, e.empId)">
+            <div *ngIf="e.empId == ld.empId" rowspan=200 px>
+                <tr>
+                    <td width="70">{{ld.leaveId}}</td>
+                    <td width="90">{{ld.empId}}</td>
+                    <td width="110">{{ld.leaveStartDate}}</td>
+                    <td width="150">{{ld.leaveEndDate}}</td>
+                    <td width="135">{{ld.leaveNoOfDays}}</td>
+                    <td width="100">{{ld.leaveReason}}</td>
+                    <td width="80">{{ld.leaveAppliedOn}}</td>
+                    <td width="140">{{ld.leaveManagerComments}}</td>
+                </tr>
+            </div>
+        </div>
+    </table>
+  </tr>
+</table>
+
+<div align = center>
+    <div *ngIf="showButton">
+        <input type="button"class="button" (click)="doApproveDeny()" value="APPROVE/DENY">
+        </div>
+    </div>
+    <div align = center>
+           <div *ngIf="!showButton">
+           <input type="button" class="button" align="center" value="APPROVE/DENY"  disabled="disabled">
+           </div>
+        </div>
+    <br/>
+

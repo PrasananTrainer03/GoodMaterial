@@ -1,0 +1,51 @@
+<p>
+  leave-history works!
+</p>
+
+<table border="3">
+  <tr>
+    <th>Leave Id</th>
+    <th>Leave StartDate</th>
+    <th>Leave EndDate</th>
+    <th>Leave No.of Days</th>
+    <th>Leave Reason</th>
+    <th>Leave Type</th>
+    <th>Leave Status</th>
+    <th>Leave AppliedOn</th>
+    <th>Manager Comments</th>
+    <th>Employ Id</th>
+  </tr>
+  <tr *ngFor="let leave of history | async">
+    <td>
+      {{leave.leaveId}}
+    </td>
+    <td>
+      {{leave.leaveStartDate}}
+    </td>
+    <td>
+      {{leave.leaveEndDate}}
+    </td>
+    <td>
+      {{leave.leaveNoOfDays}}
+    </td>
+    <td>
+      {{leave.leaveReason}}
+    </td>
+    <td>
+      {{leave.leaveType}}
+    </td>
+    <td>
+      {{leave.leaveStatus}}
+    </td>
+    <td>
+      {{leave.leaveAppliedOn}}
+    </td>
+    <td>
+      {{leave.leaveManagerComments}}
+    </td>
+    <td>
+      {{leave.empId}}
+    </td>
+
+  </tr>
+</table>
