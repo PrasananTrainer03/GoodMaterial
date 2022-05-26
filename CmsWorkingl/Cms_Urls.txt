@@ -1,0 +1,118 @@
+http://localhost:1111/showMenu
+
+http://localhost:1111/menu/1
+
+http://localhost:1111/showCustomer
+
+http://localhost:1111/custAuthenticate/prassucp/hexaware@
+
+http://localhost:1111/customer/1
+
+http://localhost:1111/showVendor
+
+http://localhost:1111/vendor/1
+
+http://localhost:1111/vendorAuthenticate/balan89/chennai@123
+
+http://localhost:1111/wallet/1
+
+
+______________________________________________________________________________________________
+
+
+
+Angular have flexibility to call external data into Angular framework, that 
+can be achieved by using HttpServices. 
+
+HttpServices allows you to call external services, as the data to be binded to angular
+components.
+
+To deal with services, after creating project, we need 
+
+npm install @angular/http@latest 
+
+npm install rxjs-compat --save
+
+To call the services, we need the help of React JS Observables concept. 
+
+Once you send any request to exteranl services, it emits 2 promise values known as 
+
+Resolve and Reject 
+
+https://jsonplaceholder.typicode.com/users
+
+Resolve means if the service consumed successfully,
+
+Reject means 
+
+if service throws an error. 
+
+This kind of data we need to capture then we need the help of Observables. 
+
+Observables allows you to capture more than one result at a time, they can be synchronized. 
+
+________________________________________________________________________________________________
+
+
+Steps involved in calling the service 
+
+https://jsonplaceholder.typicode.com/users
+
+the above service, we need to call in angular, then 
+
+create an angular project as 
+
+ng new servicedemo
+
+after that enter into that folder as
+
+cd servicedemo
+
+now install the below 
+
+npm install rxjs-compat --save
+
+Then in app.module.ts file please import 
+
+HttpClientModule
+
+First you need to create a class, and give same fields with case that the service fields
+contains
+
+ng g class User
+export class User {
+
+    public id : number;
+    public name : string;
+    public username : string;
+    public email : string;
+    public phone : string;
+    public website : string;
+    constructor() {
+
+    }
+}
+
+
+Then you need to create service, 
+
+to create the service give the command as 
+
+ng g service service_name 
+
+ng g service User
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
