@@ -1,0 +1,17 @@
+<p>
+    Manager Name is : <b> 
+        {{manager}}
+    </b>
+</p>
+<p>customer-dash-board works!</p>
+<a [routerLink]="['/customerDashBoard',{outlets: {'cms': ['customerShow']}}]"> Customer Show</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/customerDashBoard',{outlets: {'cms': ['customerOrders']}}]"> Customer Orders</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/customerDashBoard',{outlets: {'cms': ['customerPendingOrders']}}]"> Customer Pending Orders</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/customerDashBoard',{outlets: {'cms': ['customerWallet']}}]"> Customer Wallet</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<hr/>
+<router-outlet name="cms"></router-outlet>
