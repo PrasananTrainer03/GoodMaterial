@@ -1,8 +1,6 @@
-drop database if exists lms;
+create database dxclms;
 
-create database lms;
-
-use lms;
+use dxclms;
 
 -- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --

@@ -1,0 +1,8 @@
+http://localhost:8811/search/1000
+http://localhost:8811/
+http://localhost:8811/searchByLeaveId/1
+http://localhost:8811/leaveHistory/1000
+http://localhost:8811/leaveHistory/2000
+http://localhost:8811/pendingLeaves/1000
+http://localhost:8811/applyLeave
+http://localhost:8811/approveDeny/1/1000/YES/enjoy
