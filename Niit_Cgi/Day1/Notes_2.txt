@@ -1,0 +1,177 @@
+Problem Solving :
+
+It is an essential part of every scientific discipline. 
+
+Computers are widely being used in solve problems pertaining to various domains, such as 
+banking, commerce, medicine, manufacturing, and transport
+
+To solve the given problem by using computer, you need to write a program for it. 
+
+A program consisits of 2 components, 
+
+	1) Algorithm
+
+	2) Data Structure 
+
+An algorithm can be defined as step-by-step procedure for solving a problem. 
+
+Algorithm helps the user to arrive at correct result in the finite no.of steps. 
+
+Characterstics of Algorithm :
+______________________________
+
+	-> Input : What are the input requirements are for given problem. 
+
+	-> Output : What is the output to be generated at end. 
+
+	-> Definiteness : Each instruction should be clear and ambiguous. 
+
+	-> Finiteness : An algorithm should terminate after executing a finite no.of steps. 
+
+	-> Effectiveness : Every instruction should be fundamental to be carried out. 
+
+	-> Feasible : It must be feasible enought to produce each instruction.
+
+	-> Flexibility : It must be flexible neough to carry out desired changes with no efforts. 
+
+	-> Efficient : The term efficiency means the time and space required by an algorithm to implement.
+			An algorithm must ensure that it takes little time and less memory space meeting the 
+			acceptable limit of development time. 
+
+	-> Independent : An algorithm must be language independent, which means that it should mainly focus on 		the input and the procedure required to derived the output instead of depending upon language. 	
+
+
+Different algorithms can be used to solve the same problem, some algorithms may solve the problem more efficiently than the others. 
+
+An algorithm that provides the max. efficiency should be used to solve the problem. 
+
+One of the basic techniques for improving the efficiency of algorithme is to use appropriate data structure. 
+
+Data structure defined as a way of organizing various data elements in memory w.r.t. to each other. 
+
+Data Structure 
+
+Data can be organized in many different ways, therefore, you can create as many 
+data structures as you want. 
+
+Here, we have various data structures as 
+
+    -> Arrays
+
+    -> Linked Lists
+
+    -> Stacks
+
+    -> Queues
+
+    -> Trees
+
+    -> Graphs 
+
+Use appropriate data structure, helps improve the efficiency of a program. 
+
+The use of appropriate data structures also allows you to overcome some other planning changes as 
+
+	-> Simplifying complex problems
+
+        -> Creating standard, reusable code components
+
+	-> Creating programs that are easy to understand and maintain
+
+There are 2 types of data structures known as 
+
+	-> Static 
+
+		Arrays 
+
+	-> Dynamic 
+
+		LinkedLists
+
+There are various approaches used to design the algorithms as
+
+	-> Divide and Conquer
+
+		Is a powerful approach for solving conceptual difficult problems.
+
+		It requires you to find a way of 
+
+			-> Breaking a problem into sub problems
+
+			-> Solving the trivial cases
+
+			-> Combining the solutions to a sub problem to 
+			  solve the original problem 
+
+	-> Greedy Approach
+	
+		Algorithms based on greedy approach are used for solving optimization problems, where you
+		ned to maximize profits or minimize costs under a given set of conditions
+
+		
+		Some examples of Optimization Problems are : 
+
+		  -> Finding the shortest distance from one city to another city
+
+		  -> Finding the min. no.of currency notes required for an amount
+
+		  -> Selecting Items with max. value from a given set of items. 
+
+	-> Recursion 
+
+
+		-> Refers to the technique of defining process in terms of itself
+
+		-> Used to solve complex programming problems that are repetitive in nature
+
+		-> Is useful in writing clear, short and simple programs 
+
+Factors that which affect the efficiency of a program are : 
+____________________________________________________________
+
+	-> Speed of the machine
+
+	-> Compiler
+
+	-> Operating System
+
+	-> Programming Language
+
+	-> Size of Input 
+
+
+The different orders of growth and their correspnoding big O notations are : 
+
+	-> constant -> O(1)
+
+	-> Logarithmic -> O(log n)
+
+	-> Linear -> O(n)
+
+	-> LogLinear -> O(n log n)
+
+	-> Quadratic -> O(n2)
+
+
+According to their order of growth, the big O notations can be arranged in an increasing order as : 
+
+O(1) < O(log n) < O(n) < O(n log n) < O(n2) 
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
