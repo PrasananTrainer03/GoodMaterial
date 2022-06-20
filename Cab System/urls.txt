@@ -1,0 +1,11 @@
+http://localhost:1111/bookRide
+
+http://localhost:1111/confirmRide/1/YES
+
+http://localhost:1111/showUserBookings/1
+
+http://localhost:1111/searchByBookId/1
+
+http://localhost:1111/showUserBookings/1
+
+http://localhost:1111/searchByBookId/1

@@ -1,0 +1,8 @@
+http://localhost:1111/showUserDetails
+http://localhost:1111/searchUserDetails/1
+http://localhost:1111/searchByUserName/dada
+http://localhost:1111/userAuthenticate/dada/dada@123
+http://localhost:1111/showDriverDetails
+http://localhost:1111/searchDriverUserDetails/1
+http://localhost:1111/searchByDriverUserName/Khaeel
+http://localhost:1111/driverAuthenticate/Khaeel/sheik@123
