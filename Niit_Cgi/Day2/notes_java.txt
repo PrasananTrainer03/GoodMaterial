@@ -1,0 +1,208 @@
+switch...case : Used to define menu-driven programs. 
+
+switch(expression) 
+{
+    case expression1 :
+		statement(s);
+		break;
+    case expression2 : 
+		statement(s);
+		break;
+    case expression3 : 
+		statement(s);
+		break;
+    default : 
+	statement(s);
+	break;
+}
+
+Arrays : An array is the finite ordered set of homogeneous elements, means all the elements belongs to same data type. All the elements of array are stored in successive memory locations. 
+
+int[] a = new int[]{4,22,66,332};
+
+then 
+
+a[0]=4
+a[1]=22
+a[2]=66
+a[3]=332;
+
+ int[] a = new int[]{42,88,23,14,66};
+        for(int i=0;i<a.length;i++) {
+            System.out.println(a[i]);
+        }
+
+for(int i : a) {
+   System.out.println(i);
+}
+
+In above loop, at first i points to the first element in array A, after processing first element, it checks next element is there or not by using hasMoreElements(), is hasMoreElements() returns true, it moves to the next element by using nextElement(), it repeats as soon as hasMoreElements() return true. 
+
+
+Strings are immutable, means once they are assigned we cannot change the value, by using any string methods. 
+
+There are 2 types of memories known as 
+
+	(i) STACK
+
+	(ii) HEAP 
+
+
+The Default package in java is, java.lang 
+
+The top level class in java is 
+
+Object, java.lang.Object 
+
+Object class is having the below methods as
+
+	-> hashCode()
+
+	-> toString() : It is having string representation, this method will be fired automatically once you 			print the value.	
+
+	-> equals()
+
+	-> getClass() 
+
+
+Boxing and Unboxing : 
+______________________
+
+The concept of converting value type to reference type known as boxing, and reference type to value type known as unboxing.  Object is type, that which can be used for boxing and unboxing. 
+
+
+Method Overloading : 
+____________________
+
+The concept of using the same method name w.r.t. Different data types or different parameters known as 
+method overloading.  Here, the method name must be same, but no.of parameters or type of parameters we are passing here are different. 
+
+enums : Used to store group of constant values. 
+
+enum enum_name {
+   value1, value2, value3 
+}
+
+class Demo {
+    int a,b;
+    a=5;
+    b=7;
+}
+
+the above code compile or not 
+
+How to give default values, then we need the help of constructors. 
+
+Constructor :  
+
+	A constructor is a special member, which used to initilize the member variables of the class, it is special because it has the same name as that of class name. 
+
+Rules : 
+_______
+
+	(i) It will not returns any value
+
+	(ii) It will not contains any return type
+
+	(iii) It will be invoked automatically once the instance of the class created
+
+	 (iv) A constructor can be overloaded. 
+
+Types of Constructors : 
+________________________
+
+There are 2 types of constructors known as 
+
+1) static constructors 
+
+	This is known as class constructor, which used to initialize the static variables of the class, these constructors are invoked automatically before control reaches the entry point. These constructors cannot be overloaded. In java, we don't have any static constructor, as we have static { }, that acts as static constructor. 
+
+2) instance constructors
+
+	These are the constructors, that which are invoked automatically one the instance of the class created. These constructors can be overloaded. 
+
+	default constructor
+
+	parameterized constructor 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
