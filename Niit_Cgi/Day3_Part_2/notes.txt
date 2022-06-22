@@ -1,0 +1,164 @@
+
+Static Variables : 
+___________________
+
+These are the variables, that which retains values irrespective of type of object. 
+
+Inheritance : 
+_____________
+
+The concept of deriving a new class from already existing class known as inheritance, the class which derived known as derived class, the class from which its derived known as base class, through inheritance, we can reduce the size of the program. 
+
+class First {
+...
+...
+...
+}
+
+class Second extends First {
+...
+...
+...
+}
+
+Once you create an object to Second class, then you can access all public/protected and friendly members of base class. 
+
+Super : If you want to pass values from derived class to base class, then we need the help of super keyword. It has 2 forms as 
+
+	(i) super as a keyword
+
+	(ii) super as a constructor 
+
+Abstract Class : 
+__________________
+
+A class, that which can be created, but not implemented and instantiated known as abstract class. Abstract class contains abstract and non-abstract methods, abstract methods needs to be overrided mandetorily by the derived class. 
+
+Final : This keyword ensures, as 
+
+if it is final variables we cannot change the value
+
+if it is final class, it cannot be inherited
+
+if it is final method, it cannot be overridden
+
+Interfaces : Java does not support the concept of multiple inheritance, to achieve this we need the help of interfaces.  An interface contains method declaration, and the implementation can be done in the corresponding class, you can add more than one interface to the particular class. 
+
+Difference between interface and abstract class : 
+__________________________________________________
+
+An abstract contains both abstract and non-abstract methods, where interface contains only abstract methods.
+
+Interface methods are public and abstract by default. 
+
+Multiple Inheritance can be achieved by using interfaces
+
+An interface can be called from anywhere to anywhere.
+
+Exception Handling : 
+
+It is a mechanism of handling the runtime errors, during execution of the program. 
+
+There are 2 types of errors known as 
+
+1) Compile time
+
+2) Runtime 
+
+Runtime errors occurs, during runtime if we pass invalid values, the type of errors we are getting known as runtime errors. By using exception handling, we can overcome the runtime errors. 
+
+To handle errors, we have 3 blocks as
+
+1) try block : This block contains statement(s) in which there is possibility of getting runtime errors. The statement(s) which are placed in this block are treated as heavy weighted statement(s) as jvm allocates excess memory to them. 
+
+2) catch block : Once exception raised in try block, then the control will be forwarded to catch block, this block contains alternate statement(s) for exceptions raised in try block. One try block can contains multiple catch blocks. 
+
+3) finally block : This block contains statement(s) that needs to be executed mandetorily irrespective of try and catch blocks, this block is not mandetory, but all the statements which are placed in this block are executed as mandetory statement(s). 
+
+Exception is the top most class, from which all kinds of Exceptions are derived. 
+
+syntax : 
+__________
+
+try {
+...
+...
+...
+} catch (Exception e) {
+...
+...
+...
+} finally {
+...
+...
+...
+}
+
+Scanner Class : Allows you to accept data from keyboard/file etc...
+
+Scanner sc = new Scanner(System.in);
+
+nextInt()
+nextDouble()
+next()
+nextLine()
+nextBoolean()
+
+
+There are 2 types of exceptions known as 
+
+1) Checked Exceptions  : These are the exceptions, that which occurs at compile time, as jvm feels some erroneous code is there and stops the execution at compile time, can be handled at method level by using throws keyword. 
+
+2) Unchecked Exceptions : These are the exceptions, that which occurs at runtime, can be handled by using try...catch blocks. 
+
+throw keyword : if you want to throw Exceptions, based on the condition, then we need the help of throw keyword. 
+
+Example :
+
+Write a program to accept a number, if number < 0 then throw ArithmeticException if number = 0 then throw ArrayIndexOutOfBoundsException, else print that number. 
+
+How to implement Custom Exceptions. 
+
+System Exceptions are inadequate to handle in all situations, to overcome this we need the help of custom exceptions. Any class, that which derived from Exception can be treated as custom Exception. 
+
+class CustomException extends Exception {
+...
+...
+...
+}
+
+Write a Program as create a Custom Exception as VotingException, and accept Age, if age < 18 raise VotingException with proper message, else print message as "You Can Vote" 
+
+Write a Program to Accept 2 numbers and perorm sum, but if any number < 0 then throw NegativeException, and 
+if any number = 0 then throw NumberZeroException, else print sum. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
