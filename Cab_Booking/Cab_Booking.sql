@@ -70,6 +70,7 @@ values('PAYTM',1,4823),('PHONEPE',1,4884),
 ('PAYTM',3,4842),('PHONEPE',3,8324),('GPAY',3,8482),
 ('PAYTM',4,8822),('PHONEPE',4,6323),
 ('PHONEPE',5,8823),('GPAY',5,4433);
+
 Create Table Booking
 (
    BookingID INT auto_increment Primary Key,

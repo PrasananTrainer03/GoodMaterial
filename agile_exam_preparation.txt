@@ -85,18 +85,3 @@ Amount of work a team can finish during the time period.
 
 
 
-Agile :
-________
-
-   1) Regular reviews and you can see the preview of the product. 
-
-   2) Daily Standup Meeting 
-
-   3) User Story 
-
-Git/Unix -> 10
-
-Agile -> 5
-
-MySql -> 35 
-

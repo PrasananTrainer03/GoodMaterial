@@ -1,0 +1,13 @@
+Canteen Management
+___________________
+
+
+It contains various details as 
+
+Restaurant Details, RestaurantID, RestaurantName, City, Rating, add more fields if you want, 
+and Contains Menu as MenuID, ItemName, Price, Speciality, Type then it contains 
+Customer Details and Vendor Details like CustomerId, CustomerName, CustomerUserName,CustomerPassword,City,Email Mobile for both customer and Vendor, Customer Will have wallets as WalltId, WalType,WalAMount as WalType will be PAYTM/GPAY/PHONEPE etc...Ensure each customer will have 2 wallets and more wallets also allowed. And then maintain OrderDetails as OrderId, OrderTime, MenuId, OrderStatus, VenId,CustomerId,WalId,QuanityOrderd,BillAmount,OrderComments
+
+
+this system u need to normalize and show 
+
