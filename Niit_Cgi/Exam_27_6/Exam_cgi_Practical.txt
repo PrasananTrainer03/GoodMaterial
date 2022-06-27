@@ -1,0 +1,16 @@
+1) Write a Program to convert a decimal number into binary 
+
+2) Write a Program to Display a number in roman format from 1 to 9999 
+
+3) Write a Program as accept 2 timezones and add them and print 
+
+Example : 
+
+T1 as 3 hrs 40 mins
+
+T2 as 4 hrs 35 mins
+
+as Sum is 8 hrs 15 mins
+
+as 60 mins consider as 1 hour
+
