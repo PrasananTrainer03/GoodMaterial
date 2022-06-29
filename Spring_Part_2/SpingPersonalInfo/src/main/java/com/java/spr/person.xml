@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+"-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="beanNeeraj" class="com.java.spr.Person">
+		<property name="id" value="1"/>
+		<property name="name" value="Neeraj Singh"/>
+		<property name="jobDetails">
+			<bean class="com.java.spr.JobDetails">
+				<property name="job" value="Software Engineer"/>
+				<property name="company" value="spr"/>
+				<property name="location" value="Bangalore"/>
+			</bean>
+		</property>
+		<property name="familyDetails">
+			<bean class="com.java.spr.Family">
+				<property name="city" value="Nainital"/>
+				<property name="state" value="Uttarakhand"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="beanShashank" class="com.java.spr.Person">
+		<property name="id" value="2"/>
+		<property name="name" value="Krishna Shashank"/>
+		<property name="jobDetails">
+			<bean class="com.java.spr.JobDetails">
+				<property name="job" value="Software Engineer"/>
+				<property name="company" value="spr"/>
+				<property name="location" value="Bangalore"/>
+			</bean>
+		</property>
+		<property name="familyDetails">
+			<bean class="com.java.spr.Family">
+				<property name="city" value="Hyderabad"/>
+				<property name="state" value="TS"/>
+			</bean>
+		</property>
+		
+	</bean>
+</beans>

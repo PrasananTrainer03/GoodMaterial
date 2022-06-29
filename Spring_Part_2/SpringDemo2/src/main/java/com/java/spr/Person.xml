@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+"-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="beanPrathamesh" class="com.java.spr.PersonImpl">
+		<property name="id" value="1" />
+		<property name="name" value="Prathamesh"/>
+		<property name="aadharId" value="Awe84asdfk"/>
+		<property name="passportId" value="P84835523"/>
+	</bean>
+		<bean id="beanMaheswari" class="com.java.spr.PersonImpl">
+		<property name="id" value="2" />
+		<property name="name" value="Maheshwari"/>
+		<property name="aadharId" value="B58823432"/>
+		<property name="passportId" value="P948234"/>
+	</bean>
+		<bean id="beanKavya" class="com.java.spr.PersonImpl">
+		<property name="id" value="3" />
+		<property name="name" value="Kavya"/>
+		<property name="aadharId" value="C84835233"/>
+		<property name="passportId" value="P902374743"/>
+	</bean>
+</beans>

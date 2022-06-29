@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+"-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="jobChennai" class="com.java.spr.JobDetails">
+		<property name="job" value="Software Engineer"/>
+		<property name="company" value="Hexaware"/>
+		<property name="location" value="Chennai"/>
+	</bean>
+	
+	<bean id="beanKavya" class="com.java.spr.Person">
+		<property name="id" value="1"/>
+		<property name="name" value="Kavya"/>
+		<property name="jobDetails" ref="jobChennai"/>
+		<property name="family">
+			<bean class="com.java.spr.Family">
+				<property name="city" value="Hyderabad"/>
+				<property name="state" value="TS"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="beanManoj" class="com.java.spr.Person">
+		<property name="id" value="2"/>
+		<property name="name" value="Manoj Kumar"/>
+		<property name="jobDetails" ref="jobChennai"/>
+		<property name="family">
+			<bean class="com.java.spr.Family">
+				<property name="city" value="Chennai"/>
+				<property name="state" value="TN"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="beanAkanksha" class="com.java.spr.Person">
+		<property name="id" value="3"/>
+		<property name="name" value="Akanksha"/>
+		<property name="jobDetails">
+			<bean class="com.java.spr.JobDetails">
+				<property name="job" value="Team Lead"/> 
+				<property name="company" value="Hexaware"/>
+				<property name="location" value="Pune"/>
+			</bean>
+		</property>
+		<property name="family">
+			<bean class="com.java.spr.Family">
+				<property name="city" value="Pune Hadapsar"/>
+				<property name="state" value="MH"/>
+			</bean>
+		</property>
+	</bean>
+</beans>
