@@ -1,0 +1,25 @@
+1) Perform Operations as 
+
+AddLeave
+ShowLeave
+SearchLeave
+DeleteLeave
+UpdateLeave
+
+Files to be Created 
+
+LeaveDetails.java
+LeaveDetailsException.java
+LeaveDetailsDAO.java
+LeaveDetailBAL.java
+LeaveDetailsMain.java
+
+Please implement below validations : 
+_____________________________________
+
+  1) LeaveStartDate cannot be yesterday's date
+  2) LeaveEndDate cannot be yesterday's date
+  3) LeaveStartDate cannot be greater than LeaveEndDate
+  4) noOfDays to be calculated automatically, example 
+	You applied leave from 29 June to 30 June noOfDays are 2 
+

@@ -1,0 +1,453 @@
+1)	What would be the output for the below code
+
+public class ArgsDemo {
+    String company = "Hexaware";
+public static void main(String[] args) {
+System.out.println(args[0] + " " +args[2]);
+    }
+}
+Java ArgsDemo asil prajwal sashwat
+_______________________________________________________________________________________
+
+
+2)	What is output
+public class P1 {
+public static void main(String[] args) {
+int i=10;
+       // int j=i++;
+int j = ++i;
+System.out.println(i + " " +j);
+    }
+}
+
+
+_____________________________________________________________________________________________
+
+class Demo {
+static {
+System.out.println("Demo Static...");
+    }
+}
+class C1 { 
+static {
+System.out.println("C1 con");
+    }
+public C1() {
+System.out.println("Constructor C1");
+    }
+}
+class C2 extends C1 { 
+static {
+System.out.println("C2 con");
+    }
+public C2() {
+System.out.println("Constructor C2");
+    }
+}
+public class P6 {
+public static void main(String[] args) {
+       C2 obj = new C2();
+    }
+}
+
+____________________________________________________________________________________
+
+4)	What is the output for
+int[] a = new int[]{12,4,6,33,23};
+for(int i : a) {
+System.out.println(a);
+}
+
+____________________________________________________________________________________________
+
+5)	What is the return type for constructor
+____________________________________________________________________________________________
+
+6)	Which statements are true
+a)	NullPointerException thrown when an object used without allocating memory
+b)	You can create custom exception class by extending the Exception class
+c)	Division by zero generates ArrayIndexOutOfBoundsException
+d)	An object that has not been allocated memory will holds a null value
+e)	A,b,d
+
+________________________________________________________________________________________________
+7)	Final class 
+a)	Can be inherited
+b)	Cannot be inherited
+c)	Cannot create an object
+d)	Cannot have constructor
+
+_________________________________________________________________________________________________
+
+9) What is the output
+int[] a=new int[6];
+a[10]=66;
+__________________________________________________________________________________________________
+
+public class Ex2 {
+int a=18;
+public static void show() {
+System.out.println("Age  " +a);
+    }
+public static void main(String[] args) {
+new Ex2().show();
+    }
+}
+
+
+________________________________________________________________________________________
+
+12) Identify which statements are true or false
+Overloaded methods should differ in arg list 
+Overloaded methods may differ in return type 
+Overloaded methods may differ in access specifier
+
+______________________________________________________________________________________________
+
+public class Ex3 {
+
+public static void main(String[] args) {
+       String month;
+month = "Feb";
+switch(month) {
+case "Feb" : System.out.println("Hi");
+case "Mar" : System.out.println("Hello");
+case "Apr" : System.out.println("Bye");
+case "May" : System.out.println("Test");
+default :
+System.out.println("Default");
+       }
+    }
+}
+_________________________________________________________________________________________________
+
+15) What would be output for
+class Test {
+void tests() {
+System.out.println("Hi");
+    }
+}
+
+class Fest extends Test {
+static void tests() {
+System.out.println("Bye");
+    }
+}
+public class Ex3 {
+
+public static void main(String[] args) { // line 4
+     Test obj = new Test();
+obj.tests();
+    }
+}
+
+_______________________________________________________________________________________________________
+
+What would be output for the below code
+public class Ex3 {
+static Ex3() { System.out.println("Hello");}
+public static void main(String[] args) { 
+System.out.println("Hi");
+    }
+}
+
+___________________________________________________________________________________________________
+
+) What would be output
+public class Ex3 {
+
+public static void main(String[] args) { 
+        String s1="abc";
+        String s2="abc";
+System.out.println(s1==s2);
+System.out.println(s1.equals(s2));
+    }
+}
+
+___________________________________________________________________________________________________
+
+18) To access a method in same package and other package derived classes, which modifier(s) we want
+___________________________________________________________________________________________________
+19) public class Ex3 {
+
+public Ex3() {}
+public static void main(String[] args) { 
+    }
+}
+What is public Ex3() here
+_____________________________________________________________________________________________________
+
+A static method can be called as class method (T/F)
+___________________________________________________________________________________________________
+public class Ex3 {
+
+public Ex3() {}
+public static void main(String[] args) { 
+        String res = "i" + "like" + "java";
+System.out.println(res);
+    }
+}
+___________________________________________________________________________________________________
+
+What would be output
+public class Ex3 {
+
+static {
+System.out.println("Hi");
+  }
+static {
+System.out.println("Bye");
+  }
+}
+
+______________________________________________________________________________________________________
+
+public class P9 {
+    static int count=0;
+   public void increment()
+   {
+       count++;
+   }
+   public static void main(String args[])
+   {
+       P9 obj1=new P9();
+       P9 obj2=new P9();
+       obj1.increment();
+       obj2.increment();
+       System.out.println("Obj1: count is="+obj1.count);
+
+       System.out.println("Obj2: count is="+obj2.count);
+   }
+}
+
+___________________________________________________________________________________________________
+
+What would be output for
+
+public class Hello extends String {
+public static void main(String[] args) {
+System.out.println("Hello World...");
+  }
+}
+
+____________________________________________________________________________________________________
+public class Prog17 {
+    public static void main(String[] args) {
+        test(101); 
+        test(new Integer(101));
+    
+      }
+      public static void test(Object iObject) {
+        System.out.println("Object=" + iObject);
+      }
+      public static void test(Integer iObject) {
+        System.out.println("Integer=" + iObject);
+      }
+    
+      public static void test(int iValue) {
+        System.out.println("int=" + iValue);
+      }
+}
+__________________________________________________________________________
+
+public class Prog19 {
+    public static void main(String[] args) {
+        test(101L); 
+        test(new Long(101L));
+      }
+      public static void test(long lObject) {
+        System.out.println("Long=" + lObject);
+      }
+    
+      public static void test(Object obj) {
+        System.out.println("Object=" + obj);
+      }
+}
+___________________________________________________________________________________
+
+public class Prog2 {
+    public static void main(String[] args) {
+        long b = 5;
+    char c = 'a'; 
+    short s = -2; 
+    int i = 10; 
+    i = b; 
+    System.out.println(i);
+    i = c; 
+    System.out.println(i);
+    i = s; 
+    System.out.println(i);
+    } 
+}
+
+______________________________________________________________________________________
+
+public class Quiz4 {
+    public static void main(String[] args) {
+        test(101); 
+    }
+
+    public static void test(Object ob) {
+        System.out.println("Object " +ob);
+    }    
+
+    // public static void test(int ob) {
+    //     System.out.println("int " +ob);
+    // }
+
+    public static void test(Integer ob) {
+        System.out.println("Integer " +ob);
+    }
+}
+______________________________________________________________________________________________
+
+class First {
+    public void show(int x) {
+        System.out.println("Hello " +x);
+    }
+
+    public int show(int x, int y) {
+        return x+y;
+    }
+}
+
+class Second extends First {
+     public int show(int x) {
+        return x;
+     }
+    public int show(int x,int y, int z) {
+        return x+y+z;
+    }
+}
+
+public class Quiz8 {
+    public static void main(String[] args) {
+        new Second().show(12,77,567);
+    }
+}
+_______________________________________________________________________________
+
+class First {
+    private int x=12;
+    protected String name = "Welcome";
+    public String company = "Company";
+}
+public class Quiz9 {
+    public static void main(String[] args) {
+        First obj = new First();
+        System.out.println(obj.x);
+        System.out.println(obj.name);
+        System.out.println(obj.company);
+    }
+}
+___________________________________________________________________________
+
+public class Quiz11 {
+    static int x;
+    public void incr() {
+        ++x;
+        System.out.println(x);
+    }
+    public static void main(String[] args) {
+        Quiz11 obj1 = new Quiz11();
+        Quiz11 obj2 = new Quiz11();
+        Quiz11 obj3 = new Quiz11();
+        obj1.incr();
+        obj2.incr();
+        obj3.incr();
+    
+    }
+}
+
+________________________________________________________________________________________
+
+class First {
+    public void show(int x) {
+        System.out.println("Hello " +x);
+    }
+}
+
+class Second extends First {
+    public int show(int x) {
+        return x+5;
+    }
+}
+
+public class Quiz21 {
+    public static void main(String[] args) {
+        new Second().show(12);
+    }
+}
+________________________________________________________________________________________
+
+public class Quiz99 {
+    public static void main(String[] args) {
+        System.out.println("HI");
+    }
+    public static void main() {
+        System.out.println("Bye");
+    }
+}
+________________________________________________________________________________________
+
+public class P2 {
+    public void show(Object ob) {
+        if (ob == "ABC") {
+            System.out.println("Correct A AND D");
+        } else {
+            System.out.println("Error B AND C");
+        }
+    }
+    public static void main(String[] args) {
+        String s="ABC";
+        // int a = 2;
+        P2 obj=new P2();
+        obj.show(s);
+    }
+}
+_______________________________________________________________________________________
+
+public class P6 {
+	    public void check(int x) {
+        	if (x=2) {
+	            System.out.println("Hi");
+        	} else {
+	            System.out.println("Bye");
+     	   }
+	    }
+	    public static void main(String[] args) {
+        	new P6().check(2);
+	    }
+	}
+
+___________________________________________________________________________________________
+
+public class P14 {
+    public static void main(String[] args) {
+        String arr[] =new String[]{"Divya",
+            "Fantasy"};
+        String a="Divya";
+        System.out.println(a.equals(arr[0]));
+    }
+}
+_________________________________________________________________________________________
+
+public class P36 {
+    public static void main(String[] args) {
+        if (null==null) {
+            System.out.println("Hi");
+        } else {
+            System.out.println("Bye");
+        }
+    }
+}
+__________________________________________________________________________________________
+
+Please email to 
+
+prasanna.java.trainer@gmail.com
+
+_________________________________________________________________________________________
+
+
+
