@@ -1,0 +1,230 @@
+
+
+Spring Framework 
+__________________
+
+In servelets or jsp, there is a strong binding between html and servlets files, as change in one layer will have high impact on another layer. 
+
+And we need to specify target page, that leads to the security issues. This kind of the problem you need to overcome, then we need the help of spring framework. 
+
+If you want to make any application as light-weight and make it as loosely coupled and tightly integrated applications, then we need the help of spring framework. 
+
+Changes in one layer will have less or no impact on another layer. 
+
+Dependecies : 
+____________
+
+Person 
+_______
+
+     Family
+     Job 
+     IdProofs 
+
+
+
+class Person {
+
+   private Family family;
+   private Job job;
+   List<String> idProofs = new ArrayList<String>("Passport","Aadhar","Pancard","DrivingLiscence","Voter ID");
+
+   Person objMaheswari = new Person();
+   objMaheswari.family.city("Hyderabad");
+   objMaheshwari.family.state("TS");
+   objMaheswari.job.city("Chennai");
+   objMaheswari.job.design("Associate");
+   objMaheswari.job.location("Pune");
+
+}
+
+class Family {
+   private String city;
+   private String state;
+}
+
+class Job {
+   private String company;
+   private String design;
+   private String location;
+}
+
+
+These dependencies needs to be injected to the object auatomatically, that can be 
+done by using Dependency Injection concept in spring. 
+
+   -> Spring allows you to make any application as light-weight
+   -> Fetches all dependencies at runtime, that which reduces the size of the program. 
+
+The dependencies can be added in specific xml file, and we can get the data at runtime. 
+
+The dependencies let me give example 
+
+What are dependencies for jdbc application 
+
+driver			-> com.mysql.cj.jdbc.Driver
+connectionString    -> jdbc:mysql://localhost:3306/CmsDb
+user  -> root
+pwd  -> Password123
+
+For jdbc connection, if we inject the dependency values automatically at runtime, then
+it improves the performance of the given application. This can be achieved by using 
+Spring Framework. 
+
+__________________________________________________________________________________
+
+What is Spring :
+_________________
+
+
+->    Spring is a great framework for implementing enterprise or standalone application. 
+->    Spring allows you to design any application as light-weight, and creates any application
+	as loosely coupled and tightly integrated. 
+
+->    Spring allows you to use the parts of the given applicationa nd leave other compoents 
+		which are not required in the current context. 
+
+Features : 
+___________
+
+	1) Transaction Management 
+
+		Provides pluggable transaction manager, which allows you to add the 
+			plugins and support software at runtime 
+
+	2) Jdbc Exception Handling : 
+		Spring supports separate API to deal with DB opeations, means you can
+		  use the api classes and interfaces to interact with database. 
+
+	3) AOP framework 
+
+		Aspect Oriented Programming
+
+
+Dependency Injection : 
+_______________________
+
+	In application, object is not responsible for looking up the resources they depend on
+	In DI conconcept, Dependencies to be ibjected to objects automatically. Can be ensured by using DI conept.
+
+	How to implement 
+
+public class Demo {
+
+	private String sname;
+
+	public String getSname() {
+		return name;
+	}
+
+	public void setSname(String name) {
+		this.name = name;
+	}
+	
+}
+
+Demo obj =new Demo();
+obj.setName("Girish");
+
+The above methodoloy, we can implemnt in SPRING DI as 
+
+create an xml file and write the below code
+
+Demo.xml
+_________
+
+
+<bean id="bean1" class="com.java.Demo">
+   <property name="sname" value="Maheswari" /> 
+</bean>
+
+<bean id="bean2" class="com.java.Demo">
+   <property name="sname" value="Subham" /> 
+</bean>
+
+As you created the beans, now how to invoke or load the beans. 
+
+You can load beans by using 
+
+1) BeanFactory
+
+	BeanFactory is an implementation of Factory Design pattern, its function is to create or dispence the beans. It is coming from org.springframework.beans.factory.xml, it is getting data frm XmlBeanFactory class. 
+
+BeanFactory factory= new XmlBeanFactory("Demo.xml");
+Demo demo = (Demo)factory.getBean("bean1");
+sysout(demo.getSname());
+
+
+Demo demo2= (Demo)factory.getBean("bean2");
+sysout(demo.getSname());
+
+2) ApplicationContext
+	BeanFactory used for simple applications, then ApplicationContext is the spring's more advanced container, which used to load or dispence the beans. 
+
+ApplicationContext ctx = new ClassPathXmlApplicationContext("bean.xml");
+
+Demo demo1 = (Demo)ctx.getBean("bean1");
+
+For working with Spring, please add the below dependencies in the pom.xml file
+
+
+
+ <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-beans</artifactId>
+    <version>4.3.3.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>4.3.3.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>4.3.3.RELEASE</version>
+</dependency>
+
+_________________________________________________________________________________________________
+
+    <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.28</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>5.3.9</version>
+</dependency>
+
+   <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-beans</artifactId>
+    <version>4.3.3.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>4.3.3.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>4.3.14.RELEASE</version>
+</dependency>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+

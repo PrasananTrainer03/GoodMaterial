@@ -1,0 +1,83 @@
+Spring JDBC :
+_______________
+
+Before spring, how you are implemented JDBC connections
+
+Class.forName("com.mysql.cj.jdbc.Driver");
+
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db","root","Password123");
+
+String cmd = "select * from Employ";
+
+Statement st = con.createStatement();
+
+ResultSet rs = st.executeQuery();
+
+if (rs.next()) {
+...
+...
+...
+}
+
+The above traditional JDBC API code has lot of drawbacks : 
+____________________________________________________________
+
+    -> We need to write lot of code for executing query and creating connection and 
+		resultset operations
+
+    -> Need to Handle Checked exceptions
+
+    -> Need to handle transactions
+
+    -> Repetition of codes from when we need to do same with another database. 
+
+
+These problems well addressed in Spring By using SpringJDBC
+
+Spring JDBC is an abstraction layer that which allows you to create JdbcApplications. 
+
+Here we have various classes we can use. 
+
+1) JdbcTemplate is from org.springframework.jdbc.core.JdbcTemplate
+
+it is a central class that suppots all jdbc classes, and it takes care of creation
+and release of resources. 
+
+This class is avaiable in package as org.springframework.dao
+
+Db will have 4 dependencies as
+
+driver 
+url 
+user
+pwd 
+
+These 4 dependencies to be added to Spring framework as
+
+org.springframework.jdbc.dataource.DriverManagerDataSource 
+
+This class contains all the 4 database dependencies 
+
+How to map those to the class are
+
+<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+<property name="url" value="jdbc:mysql://localhost:3306/db" /> 
+<property name="username" value="root" /> 
+<property name="password" value="Password123" /> 
+
+here driverClassName, url, username, password are the predefined attributes. 
+
+These properties we need to assign to JdbcTemplate object. 
+
+jdbcTemplate have various methods. 
+
+query() -> Used to perform select operation. 
+
+update() -> Used to perform insert, update and delete operations. 
+
+For Query Method, we have RowMapper class used to convert database records into
+Class object. 
+
+
+
+
