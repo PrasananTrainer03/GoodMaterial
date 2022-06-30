@@ -1,0 +1,72 @@
+JSTL (Java Standard Tag Library)
+
+    Allows you to write java code by using html scripting tags. 
+
+To start with JSTL, you please import the dependency in pom.xml file
+
+<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+
+
+In java code, we have 
+
+	-> variable declarations
+
+	-> assignment statements
+
+	-> control structures
+
+	-> jdbc statements 
+
+etc...
+
+All the things we can write in jstl using scripting tags. 
+
+In JSTL, we have various types of tags as
+
+  -> Core Tags
+
+To work with core tags, plesae add the below line at top of jsp file
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+
+
+	<c:out> : Used to display any value or message. 
+
+similar to out.println()
+
+To assign a value, then we need
+
+<c:set var="x" value="12" /> 
+
+<c:set var="name" value="Hari Chandana" /> 
+
+To print the variable value 
+
+X value is : 
+
+<c:out value=${x} /> 
+
+For JDBC, please add the below dependency.
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+
+
+
+
+<sql:query> :Used for select operation
+
+<sql:update> : Used for insert, update and delete operations. 
+
+
+
+
+
+
+
+
+
