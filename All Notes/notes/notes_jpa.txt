@@ -1,0 +1,170 @@
+Spring Boot ???
+
+What are the drawbacks in Spring Framework 
+
+
+	-> Need to add dependencies
+
+	-> Need to Handle Tomcat Server Issues
+
+	-> Need to Write COnfiguration files in XML 
+
+So, the above problems you need to overcome, then we need the help of SpringBoot 
+
+
+SpringBoot Built on top of Spring Framework, which provides easier and fatser way to set up, configure
+and run projects. 
+
+Why SpringBoot 
+___________________
+
+
+   -> For faster implemnetation of project. 
+
+   -> Dependency Injection features used 
+
+   -> We can integrate w.r.t. Other frameworks for better performance like
+
+		SB with Hibernate/JSP and ORM, structs etc...
+  
+   -> We can do all operations we did in spring very easily using springBoot. 
+
+Differences between Spring and SpringBoot
+__________________________________________
+
+Spring used for implementing Java Enviornment, where 
+SB framework used to develop Rest APIs
+
+Spring Allows you to make applications for developers more productive, 
+where SpringBoot provides path for easiest way to develop WebApplications. 
+
+Spring mainly focues on dependency injection, where SpringBoot More focuses on 
+AutoConfiguration.
+
+Never supports in Memory database, 
+SpringBoot ssupports Plugins working with embedded and in-memory database.
+
+________________________________________________________________________________________________________
+
+
+Spring Data JPA
+________________
+
+
+it is a high level spring source project, which used to handle database system operations. 
+
+It basically handles the complexity of JDBC-based database access, and ORM (Object Relational Mapping) 
+
+Which maps your entity classes to the database tables automatically 
+
+Spring Data JPA aims to imporove the implementation of Data access layers, as
+
+   -> No Code Repository
+
+   -> Automatic Generated Queries
+
+   -> It provides interface that which implements built-in CrudRepository, which generates the database code automatically w.r.t. Entity class provide.
+
+public interface EmployRepository extends CrudRepository<Employ,Integer> {
+
+}
+
+Not, make wiring to the JPA repository, then 
+
+all the methods will be created in service. 
+
+
+______________________________________________________________________________________
+
+
+What is JPA (Java Persistence API) 
+
+	It is a pure specification for managing relational data in java applications. It allows you to access
+data and persist data bettween java object/lcass and relational database. It follows ORM (Object Relational Mapping) which allows you to interact your Entity class directly with Database Tables.  Inside it will generate 
+JPQL. (Java Persistance Query Langauge) will be gererated automatically. No need to write any traditional code for this. 
+
+Why to use JPA
+
+	Its simpler and less code, and suitable for complex operations, 
+
+	JPA data is represented by Objects and classes automatically. As no typecasting
+		required. It uses POJO to represent persistant data that simplifies
+	database programming. 
+
+	-> No Need to write any DML or DDL statements
+
+	-> Dynamic generation of queries. 
+
+	-> Easily integrated with any framework. 
+
+
+-> Persistance : It is a class that contains static methods that obtains Factory instance. 
+
+-> EntityManagerFactory : Its factory clases and generates instances (Contains group of methods to be 
+generated for this the SQL code automatically written)
+
+public interface EmployRepository extends JpaRepository<Employ, Integer> {
+     Employ searchByName(String name);
+}
+
+
+If you dont' specify any method, it generates all possibility methods you can use. 
+
+But, once you write any method, it generates a method in memory 
+
+
+@Query("select * from Employ where name=:name)
+Employ searchByName(@Bind("name") String name);
+
+
+
+-> EntityManager : It works for the Query instnace.
+
+-> Entity : Entities are persistent objects stores as a record in the db.
+
+-> Query : It is an interface that implemented by each JPA to obtaint objects that meet criteria.
+
+-> Transaction 
+
+
+JPA Annotations 
+
+@Entity -> Ensures the w.r.t. Class name the same table w.r.t. Database to be mapped. 
+
+@Id -> Ensures the primary key column of the given table
+
+@Service -> Ensures that we are calling the JPA interface generated methods an
+
+@Transactional -> Which ensures it supports the CRUD operations. 
+
+the class interface to be implemented by usign JpaRepository<Employ, Integer>  ensures
+
+generate all code for Employ class and return value as Integer, as you spefied parmeters
+correct or not 
+
+public interface EmployRepository extends JpaRepository<Employ, Integer> {
+
+	Employ searchByCity(String city);
+}
+
+@Query("select * from Employ where city=:city")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

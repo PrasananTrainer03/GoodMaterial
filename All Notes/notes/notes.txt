@@ -1,0 +1,188 @@
+Hibernate : 
+
+What is Hibernate 
+
+Allows you to write database orieinted applications. 
+
+Here, we will not write any database commands, as here the concept of POJO classes
+came into picture. 
+
+Plain Old Java Object (POJO) 
+
+means the java class directly connects to the database tables to store and retreives data. 
+
+This concept we call as ORM (Object Relational Mapping)
+
+as map the java classes to the database tables w.r.t. Proper Annotation. 
+
+So, from class you can get database values. 
+
+No need to write any traditional code to connect to database and retrieve records. 
+
+ <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.18</version>
+</dependency>
+     <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.3.5.Final</version>
+        </dependency>
+
+Hibernate Architecture
+
+hibernate.cfg.xml file is heart for storing and configuring db and pojo class properties. 
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/infinitepractice</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    </session-factory>
+</hibernate-configuration>
+
+This is the default code of hibernate.cfg.xml
+
+How to create a POJO class.
+
+For table mapping, we need to use 
+
+@Entity for class
+
+@Table entity for identiying database table 
+
+@Entity
+@Table(name="Employ")
+public class Employ {
+
+}
+
+How to identify the primary key
+
+@Id
+
+all are coming from persistence
+
+	@Id
+	@Column(name="empno")
+	private int empno;
+
+
+@Column(name="empno") 
+means
+
+private int empno directly targets the empno field in the datbase.
+
+To the entire POJO class will be as 
+
+
+_____________________________________________________________________________________________
+
+
+
+
+
+package com.java.hib;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Employ")
+public class Employ {
+
+	@Id
+	@Column(name="empno")
+	private int empno;
+	
+	@Column(name="name")
+	private String name;
+	
+	@Column(name="gender")
+	@Enumerated(EnumType.STRING)
+	private Gender gender;
+	
+	@Column(name="dept")
+	private String dept;
+	
+	@Column(name="desig")
+	private String desig;
+	
+	@Column(name="basic")
+	private int basic;
+	
+	public int getEmpno() {
+		return empno;
+	}
+	public void setEmpno(int empno) {
+		this.empno = empno;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Gender getGender() {
+		return gender;
+	}
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	public String getDesig() {
+		return desig;
+	}
+	public void setDesig(String desig) {
+		this.desig = desig;
+	}
+	public int getBasic() {
+		return basic;
+	}
+	public void setBasic(int basic) {
+		this.basic = basic;
+	}
+	
+	
+}
+
+
+
+After making POJO class, we need to register in hibernate.cfg.xml file as
+
+
+
+      <mapping class="com.java.hib.Employ"/>
+
+
+select * from employ;
+
+for that equal HQL command is 
+
+from Employ; -- means it gets data from Employ class, (POJO) it hits 
+the database table directly. 
+
+For hibernate, we need to hold 
+
+Table Data and Connection Information in Cache
+
+Because entity classes directly interact with Database Table 
+
+
