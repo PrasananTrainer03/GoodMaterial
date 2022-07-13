@@ -1,0 +1,7 @@
+npm install simple-react-validator --save
+
+npm install --save material-ui axios react-tap-event-plugin 
+
+npm install react-router-dom
+
+https://learnwithparam.com/blog/basic-routing-in-react-router/
