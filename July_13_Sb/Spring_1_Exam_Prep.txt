@@ -1,0 +1,769 @@
+1) BeanFactory will be represented from  package
+
+org.springframework.beans.factory.xml.XmlBeanFactory.
+
+2) Spring is a 
+
+Open Source Framework
+
+3) Is BeanFactory is class or interface
+
+	BeanFactory is a class. 
+
+4) What is the correct statement 
+
+   ApplicationContext extends BeanFactory 
+
+5) Syntax to create a bean or access xml file.
+
+ApplicationContext ctx = new ClassPathXmlApplicationContext("xmlfile");
+
+6) Syntax using BeanFactory 
+
+BeanFactory  factory = new XmlBeanFactory(new FileInputStream("myBean.xml")); 
+
+7) Assume you have an Employ class, and How to access a given bean in java program
+
+ApplicationContext ctx = new ClassPathXmlApplicationContext("xmlfile");
+Employ employ = (Employ)ctx.getBean("employBean");
+
+8) What is the syntax to create a bean 
+
+<beans>
+   <bean id="idName" class="class_name">
+      <property name="name1" value="value1" /> 
+      <property name="name2" value="value2" />
+   </bean>
+</beans>
+
+9) Bean Scopes, what is the default scope for the bean
+
+singleton
+
+10) Identify the syntax to define the bean Scope
+
+<!-- A bean definition with singleton scope -->
+<bean id = "..." class = "..." scope = "singleton">
+   <!-- collaborators and configuration for this bean go here -->
+</bean>
+
+11) Types of Injections in Bean
+
+There are 2 types of injections as 
+
+    -> constructor
+
+public helloimpl() 
+      { 
+      } 
+      public helloimpl(String a) 
+      { 
+      greeting=a; 
+      } 
+<bean id="hello"  class="helloimpl"> 
+<constructor-arg> 
+<value>Good Morning!...</value> 
+</constructor-arg> 
+</bean> 
+
+    -> setter 
+
+public class helloimpl implements hello 
+{ 
+      private String greeting; 
+      public helloimpl() 
+      { 
+      } 
+      public helloimpl(String a) 
+      { 
+      greeting=a; 
+      } 
+      public String sayhello(String s) 
+      { 
+           return greeting+s; 
+      } 
+      public void setGreeting(String a) 
+      { 
+           greeting=a; 
+      } 
+} 
+
+  <?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE beans PUBLIC 
+"-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd"> 
+  <beans> 
+   <bean id="hello" 
+         class="helloimpl"> 
+   <property name="greeting"> 
+       <value>Good Morning!...</value> 
+   </property> 
+   </bean> 
+</beans> 
+
+12) Identify phases where the bean injections can be applied
+
+   Compiler TIme, ClassLoaded Time, Runtime
+
+13) How to Enable the Autowiring in xml file
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+   <context:annotation-config/>
+   <!-- bean definitions go here -->
+
+Once <context:annotation-config/> is configured, you can start annotating your code to indicate that Spring should automatically wire values into properties, methods, and constructors.
+
+14) What are the main autowiring modes are available 
+
+    byName, byType, constructor and autodetect
+
+15) How to Refer the bean into existing bean 
+
+<beans>
+	<bean id="jobChennai" class="com.java.spr.JobDetails">
+		<property name="job" value="Software Engineer"/>
+		<property name="company" value="Hexaware"/>
+		<property name="location" value="Chennai"/>
+	</bean>
+	
+	<bean id="beanKavya" class="com.java.spr.Person">
+		<property name="id" value="1"/>
+		<property name="name" value="Kavya"/>
+		<property name="jobDetails" ref="jobChennai"/>
+		<property name="family">
+			<bean class="com.java.spr.Family">
+				<property name="city" value="Hyderabad"/>
+				<property name="state" value="TS"/>
+			</bean>
+		</property>
+	</bean>
+</beans>
+
+16) How to implement Inheritance in beans 
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id = "helloWorld" class = "com.tutorialspoint.HelloWorld">
+      <property name = "message1" value = "Hello World!"/>
+      <property name = "message2" value = "Hello Second World!"/>
+   </bean>
+
+   <bean id ="helloIndia" class = "com.tutorialspoint.HelloIndia" parent = "helloWorld">
+      <property name = "message1" value = "Hello India!"/>
+      <property name = "message3" value = "Namaste India!"/>
+   </bean>
+</beans>
+
+17) How to implement Spring w.r.t. Collections 
+
+List
+
+public class Student {
+
+	private int sno;
+	private String firstName;
+	private String lastName;
+	
+	public int getSno() {
+		return sno;
+	}
+	public void setSno(int sno) {
+		this.sno = sno;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	@Override
+	public String toString() {
+		return "Student [sno=" + sno + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+	}	
+}
+
+
+public class Trainer {
+
+	private String trainerName;
+	private String location;
+	private List<Student> studentList;
+	
+	public String getTrainerName() {
+		return trainerName;
+	}
+	public void setTrainerName(String trainerName) {
+		this.trainerName = trainerName;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	public List<Student> getStudentList() {
+		return studentList;
+	}
+	public void setStudentList(List<Student> studentList) {
+		this.studentList = studentList;
+	}
+	
+	public void showAllInfo() {
+		System.out.println("Trainer Name  " +trainerName);
+		System.out.println("Location  " +location);
+		for (Student s : studentList) {
+			System.out.println(s);
+		}
+	}
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+"-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="studentOne" class="com.java.spr.Student">
+		<property name="sno" value="1"/>
+		<property name="firstName" value="Harivignesh"/>
+		<property name="lastName" value="Devrajan"/>
+	</bean>
+	<bean id="studentTwo" class="com.java.spr.Student">
+		<property name="sno" value="2"/>
+		<property name="firstName" value="Jagruthi"/>
+		<property name="lastName" value="Shrivas"/>
+	</bean>
+	<bean id="studentThree" class="com.java.spr.Student">
+		<property name="sno" value="3"/>
+		<property name="firstName" value="Harsha"/>
+		<property name="lastName" value="Priya"/>
+	</bean>
+	<bean id="beanTrainer" class="com.java.spr.Trainer">
+		<property name="trainerName" value="Prasanna"/>
+		<property name="location" value="Hyderabad"/>
+		<property name="studentList">
+			<list>
+				<ref bean="studentOne"/>
+				<ref bean="studentTwo"/> 
+				<ref bean="studentThree" /> 
+			</list>
+		</property>
+	</bean>
+</beans>
+
+
+Set 
+
+<!-- results in a setAddressSet(java.util.Set) call -->
+      <property name = "addressSet">
+         <set>
+            <value>INDIA</value>
+            <value>Pakistan</value>
+            <value>USA</value>
+            <value>USA</value>
+         </set>
+      </property>
+
+Map
+
+ <!-- results in a setAddressMap(java.util.Map) call -->
+      <property name = "addressMap">
+         <map>
+            <entry key = "1" value = "INDIA"/>
+            <entry key = "2" value = "Pakistan"/>
+            <entry key = "3" value = "USA"/>
+            <entry key = "4" value = "USA"/>
+         </map>
+      </property>
+
+18)
+ How to define JdbcProperties in bean.xml
+
+<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		 <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+      	 <property name="url" value="jdbc:mysql://localhost:3306/hexawarenew"/>
+      	 <property name="username" value="root" />
+      	 <property name="password" value="root" />
+	</bean>
+
+19) Which class allows you to implement Jdbc operations
+
+JdbcTemplate
+
+20) Identify the package it comes from 
+
+org.springframework.jdbc.core.JdbcTemplate
+
+21) Identify the Query method of mapRow to store the records 
+
+	String cmd ="select * from Employ";
+		List<Employ> employList = jdbcTemplate.query(cmd, new RowMapper<Employ>() {
+
+			@Override
+			public Employ mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Employ employ = new Employ();
+				employ.setEmpno(rs.getInt("empno"));
+				employ.setName(rs.getString("name"));
+				employ.setGender(Gender.valueOf(rs.getString("gender")));
+				employ.setDept(rs.getString("dept"));
+				employ.setDesig(rs.getString("desig"));
+				employ.setBasic(rs.getInt("basic"));
+				return employ;
+			}
+		});
+		return employList;
+
+22) Write the syntax for update method in jdbcTemplate
+
+String cmd = "Insert into Employ(name,gender,Dept,Desig,Basic) values(?,?,?,?,?)";
+		jdbcTemplate.update(cmd, new Object[] {employ.getName(), employ.getGender().toString(),
+				employ.getDept(), employ.getDesig(),employ.getBasic()
+			});
+		return "Employ Record Inserted...";
+
+23) Spring Provides
+
+	Resource Management, Exception Handling, Transaction Participation, 
+			Resource Unwrapping
+
+24) How many types of injections spring will provide (2) 
+
+25) MVC Stands for
+
+Model View and Controller
+
+26) Spring MVC is a request based framework (T/F) 
+
+Yes
+
+27) How to Externalize constants from Spring Configuration File or Spring annotation into
+a property file 
+
+By using <context:property:placeholder /> 
+
+29) <bean id="bean1" class="com.java.Employ" p:dept="Department" >
+	
+    </bean>
+
+Here p is a the namespace to be declared. 
+
+30) 
+
+@Configuration
+public class ApplicationConfig {
+    @AutoWired
+    private DataSource dataSource;
+
+    @Bean
+    ClientRepository repository;
+
+________________________________________________________________________________________________________
+
+Bean Properties : 
+__________________
+
+Sr.No.	Properties & Description
+1	
+class
+
+This attribute is mandatory and specifies the bean class to be used to create the bean.
+
+2	
+name
+
+This attribute specifies the bean identifier uniquely. In XMLbased configuration metadata, you use the id and/or name attributes to specify the bean identifier(s).
+
+3	
+scope
+
+This attribute specifies the scope of the objects created from a particular bean definition and it will be discussed in bean scopes chapter.
+
+4	
+constructor-arg
+
+This is used to inject the dependencies and will be discussed in subsequent chapters.
+
+5	
+properties
+
+This is used to inject the dependencies and will be discussed in subsequent chapters.
+
+6	
+autowiring mode
+
+This is used to inject the dependencies and will be discussed in subsequent chapters.
+
+7	
+lazy-initialization mode
+
+A lazy-initialized bean tells the IoC container to create a bean instance when it is first requested, rather than at the startup.
+
+8	
+initialization method
+
+A callback to be called just after all necessary properties on the bean have been set by the container. It will be discussed in bean life cycle chapter.
+
+9	
+destruction method
+
+A callback to be used when the container containing the bean is destroyed. It will be discussed in bean life cycle chapter.
+
+_________________________________________________________________________________________________
+
+Sr.No.	Scope & Description
+1	
+singleton
+
+This scopes the bean definition to a single instance per Spring IoC container (default).
+
+2	
+prototype
+
+This scopes a single bean definition to have any number of object instances.
+
+3	
+request
+
+This scopes a bean definition to an HTTP request. Only valid in the context of a web-aware Spring ApplicationContext.
+
+4	
+session
+
+This scopes a bean definition to an HTTP session. Only valid in the context of a web-aware Spring ApplicationContext.
+5	
+global-session
+
+This scopes a bean definition to a global HTTP session. Only valid in the context of a web-aware Spring ApplicationContext.
+
+__________________________________________________________________________________________
+
+The life cycle of a Spring bean is easy to understand. When a bean is instantiated, it may be required to perform some initialization to get it into a usable state. Similarly, when the bean is no longer required and is removed from the container, some cleanup may be required.
+
+Though, there are lists of the activities that take place behind the scene between the time of bean Instantiation and its destruction, this chapter will discuss only two important bean life cycle callback methods, which are required at the time of bean initialization and its destruction.
+
+To define setup and teardown for a bean, we simply declare the <bean> with initmethod and/or destroy-method parameters. The init-method attribute specifies a method that is to be called on the bean immediately upon instantiation. Similarly, destroymethod specifies a method that is called just before a bean is removed from the container.
+
+Initialization callbacks
+The org.springframework.beans.factory.InitializingBean interface specifies a single method −
+
+void afterPropertiesSet() throws Exception;
+Thus, you can simply implement the above interface and initialization work can be done inside afterPropertiesSet() method as follows −
+
+public class ExampleBean implements InitializingBean {
+   public void afterPropertiesSet() {
+      // do some initialization work
+   }
+}
+In the case of XML-based configuration metadata, you can use the init-method attribute to specify the name of the method that has a void no-argument signature. For example −
+
+<bean id = "exampleBean" class = "examples.ExampleBean" init-method = "init"/>
+Following is the class definition −
+
+public class ExampleBean {
+   public void init() {
+      // do some initialization work
+   }
+}
+Destruction callbacks
+The org.springframework.beans.factory.DisposableBean interface specifies a single method −
+
+void destroy() throws Exception;
+Thus, you can simply implement the above interface and finalization work can be done inside destroy() method as follows −
+
+public class ExampleBean implements DisposableBean {
+   public void destroy() {
+      // do some destruction work
+   }
+}
+In the case of XML-based configuration metadata, you can use the destroy-method attribute to specify the name of the method that has a void no-argument signature. For example −
+
+<bean id = "exampleBean" class = "examples.ExampleBean" destroy-method = "destroy"/>
+Following is the class definition −
+
+public class ExampleBean {
+   public void destroy() {
+      // do some destruction work
+   }
+}
+If you are using Spring's IoC container in a non-web application environment; for example, in a rich client desktop environment, you register a shutdown hook with the JVM. Doing so ensures a graceful shutdown and calls the relevant destroy methods on your singleton beans so that all resources are released.
+
+It is recommended that you do not use the InitializingBean or DisposableBean callbacks, because XML configuration gives much flexibility in terms of naming your method.
+
+Example
+Let us have a working Eclipse IDE in place and take the following steps to create a Spring application −
+
+Steps	Description
+1	Create a project with a name SpringExample and create a package com.tutorialspoint under the src folder in the created project.
+2	Add required Spring libraries using Add External JARs option as explained in the Spring Hello World Example chapter.
+3	Create Java classes HelloWorld and MainApp under the com.tutorialspoint package.
+4	Create Beans configuration file Beans.xml under the src folder.
+5	The final step is to create the content of all the Java files and Bean Configuration file and run the application as explained below.
+Here is the content of HelloWorld.java file −
+
+package com.tutorialspoint;
+
+public class HelloWorld {
+   private String message;
+
+   public void setMessage(String message){
+      this.message = message;
+   }
+   public void getMessage(){
+      System.out.println("Your Message : " + message);
+   }
+   public void init(){
+      System.out.println("Bean is going through init.");
+   }
+   public void destroy() {
+      System.out.println("Bean will destroy now.");
+   }
+}
+Following is the content of the MainApp.java file. Here you need to register a shutdown hook registerShutdownHook() method that is declared on the AbstractApplicationContext class. This will ensure a graceful shutdown and call the relevant destroy methods.
+
+package com.tutorialspoint;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainApp {
+   public static void main(String[] args) {
+      AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+
+      HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+      obj.getMessage();
+      context.registerShutdownHook();
+   }
+}
+Following is the configuration file Beans.xml required for init and destroy methods −
+
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id = "helloWorld" class = "com.tutorialspoint.HelloWorld" init-method = "init" 
+      destroy-method = "destroy">
+      <property name = "message" value = "Hello World!"/>
+   </bean>
+
+</beans>
+Once you are done creating the source and bean configuration files, let us run the application. If everything is fine with your application, it will print the following message −
+
+Bean is going through init.
+Your Message : Hello World!
+Bean will destroy now.
+Default initialization and destroy methods
+If you have too many beans having initialization and/or destroy methods with the same name, you don't need to declare init-method and destroy-method on each individual bean. Instead, the framework provides the flexibility to configure such situation using default-init-method and default-destroy-method attributes on the <beans> element as follows −
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+   default-init-method = "init" 
+   default-destroy-method = "destroy">
+
+   <bean id = "..." class = "...">
+      <!-- collaborators and configuration for this bean go here -->
+   </bean>
+</beans>
+
+____________________________________________________________________________________________
+
+Spring MVC
+
+Model/View/Controller 
+
+Model : Contains the data of the application. It will be either single object or list of objects. 
+
+View : View represents information about particular ui page its basically jsp and jstl 
+		combination, contains input pages/result pages and error pages. 
+
+Controller : Contains the business logic of application, you can specify by using 
+
+		@Controller annotation.
+
+FrontController : DispatcherServlet class works as front controller, it is responsible to 
+		manage the flow of the application. w.r.t particular action you need to 
+		redirect to any other page can be done by using FrontController. 
+
+Working Flow :
+_______________
+
+Once you send any request to resource, the DispatcherServlet will contact the handler
+mapping interface. 
+
+The handlerMapper interacts with controller, for which you need to redirect to particular
+ModelorView
+
+Then the viewResolver will redirect to the particular view. 
+
+Which annotation used to represent the controller
+
+@Controller 
+
+How you need to map a particular class w.r.t. URL specified name 
+
+@RequestMapping annotation
+
+How to represent dispatcherServlet in web.xml
+
+<servlet>
+		<servlet-name>SpringDispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextClass</param-name>
+			<param-value>
+				org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>com.java.mvc</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+How to identify the package, that which contains all bean classe and controller classes 
+
+<context:component-scan base-package="com.java.mvc" /> 
+
+The above one, if you want to define w.r.t. Annotations
+
+@ComponentScan(basePackages="com.java.mvc")
+
+How to identify forms in spring MVC
+
+<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+
+what is the purpose of 
+
+@Bean
+
+@Bean annotation which is applied on a method to specify that it returns a bean to be managed by Spring context. Spring Bean annotation is usually declared in Configuration classes methods. This annotation is also a part of the spring core framework
+
+@Configuration
+
+Ensures any class as a configuration class, and which contains all infroamtion about contacting external resources, then we need the help of @Configuration annotation.
+
+@Configuration annotation is part of the spring core framework. Spring Configuration annotation indicates that the class has @Bean definition methods. So Spring container can process the class and generate Spring Beans to be used in the application
+
+How to Enables MVC in you web application
+
+@EnableWebMvc
+
+
+SpringBoot
+
+What is SpringBoot
+
+SpringBoot is a framework, that which allows you to create any restful webservices. 
+
+SpringBoot implemented on top of Spring Framework.
+
+It is combiantion of Spring Framework + Embedded HTTP Servers - XML configuration 
+
+SpringBoot Architecture : 
+___________________________
+
+Client Sends a request, the controller 
+contacts the service layer, then the service layer will get the information from Repository class, and w.r.t. Model class it gets information from Db and prints the result. 
+
+@RestController is an annotation which identifies sb controller. 
+
+Here, we have various mappings avaiable as
+
+@GetMapping  : Used to read the resource from the server. 
+
+@PostMapping : Used to perform insert operation. 
+
+@PutMapping : Used to implement both Insert and Update operation. 
+
+@DeleteMapping : Used to implement Delete Operation. 
+
+________________________________________________________________________________________
+
+@Bean - indicates that a method produces a bean to be managed by Spring.
+
+@Service - indicates that an annotated class is a service class.
+
+@Repository - indicates that an annotated class is a repository, 
+which is an abstraction of data access and storage.
+
+@Configuration - indicates that a class is a configuration class that 
+may contain bean definitions.
+
+@Controller - marks the class as web controller, capable of handling 
+the requests.
+
+@RequestMapping
+	The value attribute of @RequestMapping annotation is used to specify the URL pattern
+
+@PathVariable
+	It enables the controller to handle a request for parameterized URLs.
+
+@RequestBody annotations tell the Spring to find a suitable message converter to 
+convert a resource representation coming from a client into an object. {If you want to pass any object as an
+input, then we need the help of @RequestBody, example if you want to perform addEmploy, as you need to pass Employ class object as parameter, that can be passed by using @RequestBody} 
+
+@SprinbBootApplication is a single annotation combines three annotations, enables you to identify Sb Application.
+
+@ResponseStatus annotation is used to override the HTTP response code for a 
+response. You can use this annotation for error handling while developing a web 
+application or RESTful web service using Spring.
+
+200 OK
+Indicates that the request has succeeded.
+204 No Content
+The server has fulfilled the request but does not need to return a response body. The server may return the updated meta information.
+400 Bad Request
+The request could not be understood by the server due to incorrect syntax. The client SHOULD NOT repeat the request without modifications.
+401 Unauthorized
+Indicates that the request requires user authentication information. The client MAY repeat the request with a suitable Authorization header field
+404 Not Found
+The server can not find the requested resource.
+405 Method Not Allowed
+The request HTTP method is known by the server but has been disabled and cannot be used for that resource. (It comes mostly with Post Methods) 
+
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+_____________________________________________________________________________________________________
+
+
+Hibernate 
+
+
+
+
+
+
