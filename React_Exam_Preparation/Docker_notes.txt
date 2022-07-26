@@ -1,0 +1,102 @@
+1) How to see the list of images in docker
+
+docker images
+
+2) How to create a docker image
+
+docker build -t java-app .      
+
+3) How to run docker image
+
+docker run image_name
+
+4) How to run docker image interactive mode
+
+docker run -it image_name
+
+5) Docker Properties
+
+FROM: As the base for our image, we'll take the Java-enabled Alpine Linux created in the previous section.
+MAINTAINER: The maintainer of the image.
+COPY: We let Docker copy our jar file into the image.
+ENTRYPOINT: This will be the executable to start when the container is booting. We must define them as JSON-Array because we'll use an ENTRYPOINT in combination with a CMD for some application arguments.
+
+What Is a Dockerfile: Everything You Need to Know
+Lesson 7 of 12By Sana Afreen
+
+Last updated on Jul 13, 202267816
+What Is Dockerfile: Everything You Need to Know
+PreviousNext
+Table of Contents
+What is Docker?What is a Dockerfile?List of Docker Commands for Creating a DockerfileHow to Build a Docker Image and Docker Container Using Dockerfile?Build a Docker Image with DockerfileView More
+Docker tool is a vital part of the configuration management tool in most of the global companies. Docker tool runs an application with the help of dockerfile with a high level of abstraction and security. Hence, many companies are extensively adopting the tool to achieve high network availability, service continuity, and service provision with high scalability. 
+
+However, global news wire has confirmed that the demand for docker tools in the market will eventually grow from USD 217 million to USD 993 million by 2024. This growth is exponential.
+
+The reason for Docker being so popular is Docker image, Docker container and Dockerfile. However, Docker Image can be created only with the help of Dockerfiles. Moving forward, let us understand docker and dockerfile in detail.
+
+Explore the opportunities of working with the latest DevOps tools such as Docker, Git, Jenkins, and more by choosing our DevOps Engineer Certification Course. Grab your seat fast by contacting our admission counselor TODAY!
+What is Docker?
+Docker is a configuration management tool that is used to automate the deployment of software in lightweight containers. These containers help applications to work efficiently in different environments.
+
+Post Graduate Program in DevOps
+Designed in collaboration with Caltech CTMEEXPLORE COURSEPost Graduate Program in DevOps
+Features of Docker:
+
+Easy and faster configuration
+Application isolation
+Security management
+High productivity
+High scalability
+Infrastructure independent
+Docker container is a software package that has all the dependencies required to run an application.
+
+Note: A Docker Image is a template of instructions used to create containers
+
+What is a Dockerfile?
+Before we discuss what is a Dockerfile, it is important to know what a Docker image is. 
+
+Docker Image:
+A Docker Image is a read-only file with a bunch of instructions. When these instructions are executed, it creates a Docker container.
+
+Dockerfile:
+Dockerfile is a simple text file that consists of instructions to build Docker images.
+
+Mentioned below is the syntax of a Dockerfile:
+
+Syntax
+
+# comments
+
+command argument argument1...
+
+Example
+
+# Print "Get Certified. Get Ahead"
+
+Run echo "Get Certified. Get Ahead"
+
+Now, let's have a look at how to build a Docker image using a dockerfile.
+
+FREE DevOps Certification Training
+Master the fundamentals of DevOpsSTART LEARNINGFREE DevOps Certification Training
+List of Docker Commands for Creating a Dockerfile
+Before we create our first Dockerfile, it is important to understand what makes up the file. 
+
+Dockerfile consists of specific commands that guide you on how to build a specific Docker image. 
+
+The specific commands you can use in a dockerfile are:
+
+FROM, PULL, RUN, and CMD
+
+FROM - Creates a layer from the ubuntu:18.04
+PULL - Adds files from your Docker repository
+RUN - Builds your container
+CMD - Specifies what command to run within the container
+
+docker build -t java-app .      
+
+What is the purpose of . here,
+
+to make a docker image for the current project
+

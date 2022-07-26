@@ -1,0 +1,473 @@
+1) JSX stands for 
+
+  Javascript for xml
+
+2) How to create a react project 
+
+create-react-app project_name
+
+3) How to create a component 
+
+rg component component_name -f
+
+4) Which file contains all the dependencices of react project
+
+package.json 
+
+5) Which port react project runs by default 
+
+3000
+
+6) How to change the default port in react 
+
+"scripts": {
+    "start": "set PORT=3006 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+
+7) What is Oneway binding in react 
+
+One-way Data Binding
+ReactJS is designed in such a manner that follows unidirectional data flow or one-way data 
+binding. The benefits of one-way data binding give you better control throughout the 
+application. In this, we need to write code for return updated values as we are writing bind code in that. 
+
+8) What is meant by virtual dom
+
+Virtual DOM
+
+A virtual DOM object is a representation of the original DOM object. It works like a one-way data binding. Whenever any modifications happen in the web application, the entire UI is re-rendered in virtual DOM representation. Then it checks the difference between the previous DOM representation and new DOM. Once it has done, the real DOM will update only the things that have actually changed. This makes the application faster, and there is no wastage of memory.
+
+9) Which file is responsible to display the contents of react project
+
+app.js
+
+10) How to upload any component in react 
+
+import component from "./component"
+export default component;
+
+*** Then only, we can use this component in entire project ***
+
+11) What is the purpose of render method
+
+render() controls the contents of the container node you pass in. Any existing DOM elements inside are replaced when first called. Later calls use React’s DOM diffing algorithm for efficient updates.
+
+render() does not modify the container node (only modifies the children of the container). It may be possible to insert a component to an existing DOM node without overwriting the existing children.
+
+render() currently returns a reference to the root ReactComponent instance. However, using this return value is legacy and should be avoided because future versions of React may render components asynchronously in some cases. If you need a reference to the root ReactComponent instance, the preferred solution is to attach a callback ref to the root element.
+
+Using render() to hydrate a server-rendered container is deprecated. Use hydrateRoot() instead.
+
+12) Specify the syntax for ReactDom.Render()
+
+ReactDOM.render(<p>Hello</p>, document.getElementById('root'))
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+in App component the data will be printed. 
+
+13) Which file contains the ReactDom.Render() 
+
+index.js file
+
+14) Which file loaded once you run the react application
+
+app.js file content gets executed. 
+
+15) You have a variable as topic="React", how to print the value 
+
+{topic}
+
+{} -> One-way binding, used to print the values or messages. 
+
+16)
+
+A class is a type of function, but 
+instead 
+• of using the keyword function to 
+initiate it, 
+• we use the keyword class, and the
+• properties are assigned inside a
+• constructor() method
+
+17) Arrow Functions
+Arrow functions allow us to write shorter function syntax:
+
+login = () => {
+    if (this.state.userName=="Hexaware" && this.state.passWord=="Hexaware") {
+      alert("Correct Credentails...");
+    } else {
+      alert("Invalid Credentials...")
+    }
+  }
+
+hello = (val) => "Hello " + val;
+
+18) How to declare variables in react 
+
+we need to use var keyword to declare variables, but if you want to declare any variables within block, then
+we need to use let keyword. 
+
+19) How to call a component in app.js file, assume we have a component as First, then how you will call
+
+import First from './components/first/first';
+
+<First/>
+
+<First></First>
+
+20) JSX syntax 
+
+const Hello =() =>{
+return (
+<div>
+<h1> Hello world </h1>
+</div>
+) }
+
+21) What is the purpose of Props and how to implement them practically
+
+Props
+Props stand for "Properties." They are read-only components. 
+Props are arguments passed into React components.
+Props are passed to components via HTML attributes.
+Props are immutable so we cannot modify the props from inside the 
+component
+
+Assume, we have component(s) and pass values as props 
+
+<Six user="Prasanna"></Six>
+
+To Print the values, then 
+
+ <h2>Hello {this.props.user}</h2> 
+
+<Seven firstName="Prasanna" lastName="Pappu">
+return <div className="component-seven">
+        Hi My FirstName is {this.props.firstName} Last Name is {this.props.lastName}</div>;
+</Seven>
+
+22) What is React State, and how to implement React State 
+
+React components has a built-in state object.
+The state object is where you store property values that belongs to 
+the component.
+When the state object changes, the component re-renders.
+Creating the state Object
+The state object is initialized in the constructor:
+
+Syntax for Defining State :
+
+constructor(props) {
+super(props);
+this.state = { brand: "Ford", model: "Mustang",color: "red", year: 1964
+};
+}
+render() {
+return (
+<div>
+<h1>My {this.state.brand}</h1>
+<p>
+It is a {this.state.color}
+{this.state.model}
+from {this.state.year}.
+</p>
+</div>
+
+How to identify and change state in textbox/button/dropdown
+
+ <form onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+            <input type="text" value={this.state.value} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+
+Here OnChange used to retains the state, as handleChange is the event name. 
+
+How to initialize the events in react, 
+
+it is in constructor and this is the below syntax
+
+constructor(props) {
+        super(props);
+        this.state = {};
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);    
+    }
+
+How to render the events in react
+
+handleChange(event) {
+      this.setState({value: event.target.value});
+}
+
+event.target.value ensures, what the new value changed instead of old value. 
+  
+handleSubmit(event) {
+      alert('A name was submitted: ' + this.state.value);
+      event.preventDefault();
+}
+
+How to change the event, in dropdown 
+
+return (
+        <form>
+        <label>
+          Select Student Name :
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="Shubham">Shubham</option>
+            <option value="Kavya">Kavya</option>
+            <option value="Srikanth">Srikanth</option>
+            <option value="Shrivas">Shrivas</option>
+          </select>
+        </label>
+        
+      </form>
+      );
+
+in constructor, 
+
+    constructor(props) {
+        super(props);
+        this.state = {value: 'kavya'};
+    
+        this.handleChange = this.handleChange.bind(this);
+        //this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+
+In handleChange, please specify as 
+
+    handleChange(event) {
+      this.setState({value: event.target.value});
+      alert('Selected Student Name is : ' + this.state.value);
+    }
+
+
+23) React LifeCycle hooks 
+
+React Component Life-Cycle
+
+In ReactJS, every component creation process involves various lifecycle methods. These lifecycle methods are termed as component's lifecycle. These lifecycle methods are not very complicated and called at various points during a component's life. The lifecycle of the component is divided into four phases. They are:
+
+Initial Phase
+
+Mounting Phase
+
+Updating Phase
+
+Unmounting Phase
+
+Each phase contains some lifecycle methods that are specific to the particular phase. Let us discuss each of these phases one by one.
+
+1. Initial Phase
+It is the birth phase of the lifecycle of a ReactJS component. Here, the component starts its journey on a way to the DOM. In this phase, a component contains the default Props and initial State. These default properties are done in the constructor of a component. The initial phase only occurs once and consists of the following methods.
+
+getDefaultProps()
+It is used to specify the default value of this.props. It is invoked before the creation of the component or any props from the parent is passed into it.
+
+getInitialState()
+It is used to specify the default value of this.state. It is invoked before the creation of the component.
+
+2. Mounting Phase
+In this phase, the instance of a component is created and inserted into the DOM. It consists of the following methods.
+
+
+
+componentWillMount()
+
+This is invoked immediately before a component gets rendered into the DOM. In the case, when you call setState() inside this method, the component will not re-render.
+
+componentDidMount()
+This is invoked immediately after a component gets rendered and placed on the DOM. Now, you can do any DOM querying operations.
+
+render()
+This method is defined in each and every component. It is responsible for returning a single root HTML node element. If you don't want to render anything, you can return a null or false value.
+
+3. Updating Phase
+
+It is the next phase of the lifecycle of a react component. Here, we get new Props and change State. This phase also allows to handle user interaction and provide communication with the components hierarchy. The main aim of this phase is to ensure that the component is displaying the latest version of itself. Unlike the Birth or Death phase, this phase repeats again and again. This phase consists of the following methods.
+
+componentWillRecieveProps()
+It is invoked when a component receives new props. If you want to update the state in response to prop changes, you should compare this.props and nextProps to perform state transition by using this.setState() method.
+
+shouldComponentUpdate()
+It is invoked when a component decides any changes/updation to the DOM. It allows you to control the component's behavior of updating itself. If this method returns true, the component will update. Otherwise, the component will skip the updating.
+
+componentWillUpdate()
+It is invoked just before the component updating occurs. Here, you can't change the component state by invoking this.setState() method. It will not be called, if shouldComponentUpdate() returns false.
+render()
+It is invoked to examine this.props and this.state and return one of the following types: React elements, Arrays and fragments, Booleans or null, String and Number. If shouldComponentUpdate() returns false, the code inside render() will be invoked again to ensure that the component displays itself properly.
+
+componentDidUpdate()
+It is invoked immediately after the component updating occurs. In this method, you can put any code inside this which you want to execute once the updating occurs. This method is not invoked for the initial render.
+
+4. Unmounting Phase
+It is the final phase of the react component lifecycle. It is called when a component instance is destroyed and unmounted from the DOM. This phase contains only one method and is given below.
+
+componentWillUnmount()
+This method is invoked immediately before a component is destroyed and unmounted permanently. It performs any necessary cleanup related task such as invalidating timers, event listener, canceling network requests, or cleaning up DOM elements. If a component instance is unmounted, you cannot mount it again.
+
+
+25) How to enable routing in react 
+
+npm install react-router-dom --save 
+
+26) How to handle Routing in react 
+
+<BrowserRouter>: It is used 
+for handling the dynamic URL.
+
+27) What are the imports used for react routing
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  Outlet
+} from "react-router-dom";
+
+
+28) Specify the structure/path to implement Routing 
+
+<BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/first" element={<First />} />
+        <Route path="/second" element={<Second />} />
+        <Route path="/third" element={<Third />} />
+        <Route path="/fourth" element={<Fourth />} />
+        <Route path="/fifth" element={ <Fifth></Fifth>} />
+        <Route path="/six" element={ <Six user="Prasanna"></Six>} />
+        <Route path="/button" element={<ButtonExample />} />
+        <Route path="/multiForm" element={<MultiForm />} />
+        <Route path="/calc" element={<Calc />} />
+        <Route path="/dropDown" element={<DropDown />} />
+        <Route path="/seven" element={<Seven firstName="Prasanna" lastName="Pappu"></Seven>
+} />
+      </Routes>
+
+      </BrowserRouter>
+
+
+
+29) How to Specify the Default Route in React
+<Route path="/" element={<Login />} />
+
+30) How to Redirect to error component 
+
+<Route path="*" element={<NoPage />} />
+
+31) How to Redirect to component using <Link> tag
+
+      <Link to="/first">First</Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/second">Second</Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/third">Third</Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/fourth">Fourth</Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/fifth">Fifth</Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/six">six</Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/seven">seven</Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/button">Button Example</Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/multiForm">MultiForm Example</Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/calc">Calculation</Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/dropDown">DropDown Example</Link>
+
+32) How to redirect to the component programatically 
+
+this.props.navigate("/menu")
+
+33) How to pass values from the React Component 
+
+<Route path="/details/:id" component={DetailsPage}/>
+
+34) How to display the property value in component 
+
+ <h2>{this.props.match.params.id}</h2>
+
+35) How to Pass values using button Click
+ let id=12;
+ this.props.navigate("/menu/"+id);
+
+36) How to install axios
+
+npm i axios 
+
+37) How to import axios in your given component
+
+import  axios  from 'axios';
+
+
+38) what is axios
+
+It is a promise based http client, which allows you to call existing restful api services. 
+
+It returns 2 promise values as Resolve and Reject, 
+
+As Resolve ensures, as if the service consumed successfully, then it returns resolve
+
+Reject ensures, as if the service returns successfully 
+
+What is syntax for get and post methods
+
+ login = () => {
+    let user = this.state.userName
+    let pwd = this.state.passWord
+    fetch("http://localhost:1111/custAuthenticate/"+user+"/"+pwd)
+    .then(response => {
+      if (response.data=='1') {
+        localStorage.setItem("cuser",user)
+        this.props.navigate("/menu")
+      }
+     // alert(response.data)
+     // result = response.data
+      // this.setState({
+      //   customers : response.data 
+      // })
+      console.log(response.data)
+    })
+    // if (this.state.userName=="Hexaware" && this.state.passWord=="Hexaware") {
+    //   //alert("Correct Credentails...");
+    //   this.props.navigate("/menu")
+    // } else {
+    //   alert("Invalid Credentials...")
+    // }
+  }
+
+
+ placeOrder = () => {
+    //  alert("Hi")
+      axios.post('http://localhost:1111/placeOrder',
+      { cusId: this.state.custId, venId: this.state.venId, 
+        menId: this.state.menuId, walSource: this.state.walSource, 
+        ordQuantity: this.state.ordQuantity, ordComments: this.state.ordComments },)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+        this.state.result = res.data
+        alert(res.data)
+      })
+    //  alert(this.state.result)
+    }
+
