@@ -1,0 +1,122 @@
+
+
+Database : 
+
+A database is set of interrelated files, stored with min. redundancy to serve many users work concurrently. 
+
+DBMS : The software that which allows you to perform transactions on data like adding new data, modifying already existing data and removing unwanted data known as DBMS. 
+
+Objectives : 
+____________
+
+
+	(i) Provides an efficient and convinient env, that which allows you store data in and retrieve data
+
+	(ii) Granting access on data to users based on their credentials
+
+
+Drawbacks : 
+____________
+
+	(i) Data Redundancy
+
+	(ii) Risk to Data Integrity
+
+       (iii) Data Isolation
+
+	(iv) Difficult Access to Data
+
+	 (v) Unsatisfactory Security Measures 
+
+
+
+ER stands for Entity Relationship model. 
+
+Entity is a thing, that which can be easily identified. 
+
+A person we call as an entity, and a place we call as an entity. 
+
+Entities can be represented using Rectangle. 
+
+Relationship is an association among various entities. 
+
+There are various types of relationships as 
+
+	(i) One to One : One field in the first entity, exactly matches with only one field in the second
+				entity. 
+
+	(ii) One to Many : One field in the first entity, exactly matches with one field in the second entity 				known as One to Manay relationship
+
+	(iii) Many to Many 
+
+
+Relational system contains various keys as 
+
+Employ(Empno,Ename,job,sal,Gender,AadharNo,Deptno)
+
+1) Candidate Key : Any key that which uniquely identifies rows of a table known as candidate key. Empno, AadharNo
+
+2) Primary Key : One of the candidate key needs to be chosen as primary key based on priority. (Empno)
+Primary key column cannot be null, no duplicates
+
+3) Alternate Key : Any key that which is candidate key, but not primary key known as Alternate Key. (AadharNo)
+
+4) Composite Key : Any key that which uniquely identifies rows of a table made up of more than one attribute 
+		known as composite key. 
+
+5) Foreign Key : Primary key in the parent table will be foreign key in the child table. 
+
+Aggregate Functions :
+_________________________
+
+sum() : Used to perform sum operation on the given field(s)
+
+Group By : Used to generate summary reports on the field specified. 
+
+Having Clause : used to perform conditions on aggregate field(s)
+
+The difference between where clause and having clause is where clause used to check conditions on 
+table field(s), as having clause used to check conditions on aggregate field(s) 
+
+Joins : Joins allows you to retrieve data from more than one table. There are various types of joins as 
+
+	(i) Inner Join : Inner Join Acts as an INTERSECT operator, used to extract only the common records
+		from the given table(s)
+
+	In given scenario, Dept table contains DeptNo as primary key, and Emp table contains DeptNo as 
+		foreign key. 
+
+	Then how we retrieve data from both table 
+
+Error Code: 1052. Column 'Deptno' in field list is ambiguous
+
+
+	(ii) Outer Join : There are various types of outer joins as 
+
+		(i) Left Outer Join : It displays all records from left-side table, and matching records from
+			the right-side table. If any table corresponding records are not found, then it would
+			be replaced with NULL keyword. 
+
+		(ii) Right Outer Join : All records from the right-side table, and matching records from the
+		Left-Side table. 
+
+	(iii) Cross Join : Generates cartician product of given table table rows. As, Table A contains n records and Table B contains m records, then the result will be n*m records 
+
+	 (iv) Self Join : If a table joins with itself, known as self join. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
