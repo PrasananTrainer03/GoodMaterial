@@ -1,0 +1,184 @@
+Today's topics
+_______________
+
+CODD Rules
+
+Any relational system said to be truely relational if it satisfies 12 CODD rules. 
+
+	(i) Information Representation
+
+		Ensure any data need to be represented in terms of rows and columns of tables. 
+
+	(ii) Guaranteed Access
+
+		Every data value in the relational databae should be logically accessible by specifying a 		   combination of the table name, the primary key value and the column name. 
+
+
+	(iii) Systematic Treatment of NULL values : DBMS must allow NULL values to support missing or 			inapplicable info. They must be distinct from zero or spaces. 
+
+	iv) Data Description rule : The data in the database is the categorized in such a way that system 		catalog and user catlog. System catalog consists of system objects that are exist at the time 			of installation. User catalog contains objects that are to be created by the user during 			working with databases. 
+
+The tables in both catalogs need to contain description and structure of database. These tables are created owned and maintained by the DBMS. Ensure you can give privileges to the tables, and system tables are read-only. 
+
+	 (v) Comprehensive Data Sublangauge
+
+		This rule states that the system must support all the following functions : 
+
+			 1) Data Definition
+ 			 2) View Definition
+ 			 3) Data Manipulation operations
+ 			 4) Security and Integrity constraints
+ 			 5) Transaction Management Operations. 
+
+
+	 (vi) View Updating
+
+	 (vii) High Level Insert, Update and Delete : Ensures that rows should be treated as sets in insert, update and delete operations.  IT stresses on the set-oriented nature of database. 
+
+	 (viii) Physical Data Independence : Application programs must remain unimpaired when any changes are made in the storage representation or access methods. 
+
+	  (ix) Logical Data Independence : Changes should not affect the user's ability to work with the data. 
+
+	  (x) Data Distribution Rule : Databases must allow manipulation of distributed data located on other 					computer system. 
+
+	  (xi) Non-Subversion : States that different levels of the language cannot subvert or bypass the integrity rules and constraints.  The DBMS must ensure that no other level can bypass the constraints specified to maintain the integrity of the database. 
+
+	  (xii) Integrity Rule : All integrity constraints must be storable in system catalog. 
+
+Normalization : Normalization is the scientific method of breaking down the complex table structures into simple table structures by using certain rules. 
+
+PROJECT(Ecode,Dept,DEPTHEAD,PROJCODE,HOURS)
+
+E001, D001, Murugan, {P1,P3,P4},{858,534,632} 
+
+First Normal Form : A table said to be in 1st Normal Form, when each cell contains precisely one value. (Atomic Values) 
+
+By Applying First Normal Form 
+
+E001,D001,Murugan,P1,858
+E001,D001,Murugan,P3,534
+E001,D001,Murugan,P4,632
+
+Insert : The department of the particular employee cannot be recorded until the employee is assigned a project. 
+
+Update : The Employee Code, Department Name, and department head are repeated several times, if an employee is transferred to another dept. this change will have to be recorded in every row of the EMPLOYEE table pertaining to that employee. 
+
+Delete : When an employee completes work on the project, the employee's record to be deleted. The info. regarding the department to which the emplyee belongs will also to be lost. 
+
+w.r.t. First Normal Form inadequate to handle in this situation. 
+
+Second Normal Form : 
+____________________ 
+
+	A table said to be in 2NF, at first it must be in 1NF, every attribute functionally dependendent on whole key but not part of the key. 
+
+	Guidelines : 
+
+		-> Find and Remove attributes, that are not functionally dependent on whole key, but not 
+			as part of the key
+
+		-> Group the remaining attributes
+
+By Applying 2NF 
+
+
+PROJECT(Ecode,Dept,DEPTHEAD,PROJCODE,HOURS)
+
+ECode -> Dept (Yes) 
+ECode -> DeptHead (Yes)
+Ecode -> ProjCode (No)
+Ecode -> Hours (No) 
+
+
+    Employ(Ecode+,Dept,DeptHead)
+
+	E001,Java,E123
+	E002,Java,E123
+	E003,Java,E123
+	E004,Java,E123
+	E005,Java,E123
+
+    Project(Ecode-,ProjCode, Hours)
+
+
+Insert : The DEPTHEAD of a new dept that does not have any employees at the present cannot be entered in the 		DEPTHEAD column. 
+
+Update : the DEPTHEAD is repeated several times, hence if a dept head moves to another dept, the change will have to be made consistently across the table. 
+
+Delete : If the record of the employee is deleted, then the information regarding the head of the dept will also to be deleted. Hence there will be a loss of information. 
+
+2nd normal inadequate to handle this situation. 
+
+Third Normal Form 
+__________________
+
+	A table said to be in 3NF, at first it must be in 2NF, and every attribute needs to depend on whole 
+		but not transitively, (means if any transitive dependency please elimiante)
+
+	Guidelines : 
+
+		-> Find and remove attributes, that are transitively depend on whole key
+		
+		-> Group the remaining attributes. 
+
+    Employ(Ecode+,Dept,DeptHead)
+    Project(Ecode-,ProjCode, Hours)
+    
+
+	Ecode -> Dept -> Transitive Dependency
+	Ecode -> DeptHead -> Transitive Dependency
+
+	DepartMent(Dept+,DeptHead)
+	Employ(Ecode+, Dept-)
+	Project(Ecode-,ProjCode+,Hours)
+
+
+Subqueries : A subquery is a query, that which is having another query inside, the query which is inside known as inner query, and the query which is outside known as outer query. Everytime, the result of the inner query
+will be send as an input to the outer query. 
+
+There are 2 types of subqueries as 
+
+-> Single Row
+
+	A subquery, that which returns only one row at a time known as single row subquery. 
+
+-> Multi Row 
+
+	A subquery, that which returns more than one row known as multi-row subquery. 
+
+
+--> From Dept and Emp table dispaly all common DeptNo records means deptno which exists in Dept table
+and Emp table 
+
+	If subquery returns more than one row, we can handle by using either
+
+	ALL : Acts as AND operator
+
+	ANY : Acts as OR Operator
+
+	EMPNO <> ALL(10,20,30) means
+	
+	Empno <> 10 AND Empno <> 20 AND Empno <> 30 
+
+	Empno <> ANY(10,20,30) means 
+
+	Empno <> 10 OR Empno <> 20 OR Empno <> 30 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subqueries
+
+DDL, DML, DQL Statements 
+
