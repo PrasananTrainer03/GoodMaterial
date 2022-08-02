@@ -1,0 +1,54 @@
+Types of commands : 
+_____________________
+
+There are various types of commands as 
+
+  (i) DDL (Data Definition Language) 
+
+		CREATE
+
+		ALTER
+
+		DROP
+
+		TRUNCATE 
+
+Data Types : 
+
+	int, float, numeric, datetime, date, time, char, varchar, enum
+
+ You can create a table, as 
+
+create table table_name (
+...
+...
+...
+...
+)
+
+
+ (ii) DML : INSERT, UPDATE and DELETE 
+
+    Insert into table_name(field1,field2,field3,........) 
+		values(value1,value2,value3.....)
+
+
+
+Employ
+    Empno INT PK AutoIncrement
+    Name varchar(30) NOT NULL
+    Gender ENUM
+    Dept  varchar(30)
+    Desig varchar(30)
+    Basic numeric(9,2) 
+
+(iii) DQL	
+
+
+Employee(Empno+,FirstName,LastName,Dob,MgrNo,LeaveAvailable,Email,PhoneNo)
+LeaveDetails(LeaveId+,Empno-,LeaveStartDate,LeaveEndDate,noOfDays,LeaveReason,
+LeaveType,LeaveStatus,ManagerComments)
+
+
+
+
