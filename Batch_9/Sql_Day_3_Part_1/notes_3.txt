@@ -1,0 +1,47 @@
+ALTER : Used add/modify/remove columns from the givn table
+
+create table EmployNew
+(
+   Empno INT,
+   Name varchar(5),
+   Basic numeric(3,2)
+);
+
+HOw to add primary key 
+
+alter table table_name add primary key(field_Name) 
+
+alter table EmployNew add Primary Key(empno);
+
+Modify the Name field with char length 20 
+
+alter table table_name modify column newField(value)
+
+alter table EmployNew Modify Name varchar(20);
+
+Modify the Basic Field size to numeric(9,2) 
+
+alter table EmployNew Modify Basic Numeric(9,2);
+
+Add Field Dept to EmployNew Table
+
+Alter Table EmployNew Add Dept varchar(30);
+
+Add Field Desig to EmployNew Table 
+
+Alter Table EmployNew Add Desig varchar(30)
+
+If You want to Drop any column, by using Alter Command 
+
+Alter Table table_name drop column column_name;
+
+
+Create the Following Tables : 
+______________________________
+
+Restaurant(RestaurantID+,RestaurantName,City,State,Email,Mobile,Rating) 
+Menu(MenuID+,RestaurantID-,ItemName,Price,Speciality)
+Customer(
+
+
+
