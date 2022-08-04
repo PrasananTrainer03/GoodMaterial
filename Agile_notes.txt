@@ -16,6 +16,15 @@ SDLC
 
 	Review/Maintenance 
 
+Waterfall Model : 
+
+-> All the requirements needs to be defined at first
+
+-> No new requirements or changes to be added in the middle 
+
+-> You cannot review the product till end, then there may be some strange results 
+
+-> Whenever we dont have strict timelines then we need to proceed for waterfall model 
 
 V Model 
 
@@ -52,7 +61,7 @@ What is a User Story?
 A user story is a requirement which defines what is required by the user as functionality. A user story can be in two forms −
 •	As a <User Role> I want <Functionality> so that <Business Value>
 •	In order to <Business value> as a <User Role> I want <Functionality>
-During release planning, a rough estimate is given to a user story using relative scale as points. During iteration planning, the story is broken down into tasks.
+		During release planning, a rough estimate is given to a user story using relative scale as 			points. During iteration planning, the story is broken down into tasks.
 
 
 •	User story talks about what is to be done. It defines what a user needs.

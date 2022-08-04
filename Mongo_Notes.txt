@@ -1,0 +1,98 @@
+MongoDb we call as noSql, as it is a light weight database, which performs all crud operations. 
+
+To start with mongodb, first create a folder in d drive as mongopractice
+
+and specify the command as
+
+mongod --dbpath "d:\mongopractice"
+
+As the instance in command prompt to be run continuously, then to start practice with mongoDb use the below command in another command prompt terminal as
+
+mongo
+
+Then you can create any database as 
+
+use db_name
+
+use batch9
+
+To See the current Database then
+
+db
+
+MongoDb contains various sections as
+
+Database : The physicalcontainer for collections, each database gets its own set of files on
+the file system, A single MongoDb typically has multiple databases. 
+
+Collection : Collection is a groiup of MongoDb documents, it is the equivalent of an RDBMS table, 
+Collection exists within a single database. Collections do not enfore a schema, 
+documents within collection can have different fields. 
+
+Document : A document is a set of key-value pairs, documents hav dynamic schema, means that documents in the same collection do not need to have the same set of fields or structure. 
+
+db.demo.insert({"empno":1,"Name":"Prasanna","Gender":"Male"})
+
+This is the way we need to insert any document. 
+
+demo is collection
+
+To drop any database 
+
+db.dropDatabase()
+
+To Create any Collection, please give the command as 
+
+db.createCollection()
+
+To See list of collections avaialble, then 
+
+show collections
+
+To Insert Data into Collection, then 
+
+db.Employ.insert({"Empno":1,"Name":"Prasanna","Gender":"Male","Dept":"Java","Desig":"Trainer",
+"Basic":83234})
+
+db.Employ.insert([
+   {"Empno":2,"Name":"Tushar","Gender":"Male","Dept":"Java","Desig":"Developer","Basic":84823},
+   {"Empno":3,"Name":"Srinivasa","Gender":"Male","Dept":"Python","Desig":"Developer","Basic":78844},
+   {"Empno":4,"Name":"Sujatha","Gender":"Female","Dept":"Sql","Desig":"Manager","Basic":90523},
+   {"Empno":5,"Name":"Swathi","Gender":"Female","Dept":"Java","Desig":"Manager","Basic":95423},
+   {"Empno":6,"Name":"Sumit","Gender":"Male","Dept":"Java","Desig":"Developer","Basic":84823}
+])
+
+To Query the records of particular collection, then 
+
+db.collection_name.find()
+
+db.Employ.find()
+
+To Query and Display the results in formatted way, then 
+
+db.collection_name.find().pretty()
+db.Employ.find().pretty()
+
+To Filter Data, then 
+
+db.Employ.find({Dept:'Java'})
+
+db.Employ.find({Gender:'Female'})
+
+db.Employ.find({"Basic":{$gt:90000}}).pretty();
+
+$gt : Greater Than
+
+$lt : Less than
+
+$gte : Greater than or equals to 
+
+$lte : Less than or equals to
+
+$ne: Not Equals to 
+$in : Acts as In keyword
+$nin : Acts as Not IN Keyword
+
+db.Employ.find({"Name":{$in:["Sujatha","Swathi","Tushar"]}}).pretty()
+
+db.Employ.find({"Name":{$nin:["Sujatha","Swathi","Tushar"]}}).pretty()
