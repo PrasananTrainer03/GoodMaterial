@@ -1,0 +1,55 @@
+select * from emp
+having basic > 5000;
+
+
+-- Compile time error, as u need to use where instead of having 
+
+
+select Empno,Ename,job, sal from EMp
+order by 2;
+
+--------------------------
+
+
+select * from Emp
+order by ename
+where sal > 3000;
+
+-- Compile Time error, because order by clause needs to come last always. 
+
+-- Priority order is
+
+where clause is first
+then group by 
+then having
+then order by 
+
+select Job,sum(sal),count(*) from Emp 
+where dept in('SALESMAN','PRESIDENT','CLERK','MANAGER')
+group by dept 
+having count(*) > 1 
+order by job;
+
+-- How to eliminate duplicate entries at the time of display 
+
+select DISTINCT job from Emp;
+
+-- what would be output for the below query 
+
+select count(*) from EMp;
+
+-- Total no.of rows of Emp table
+
+-- what would be output for below query
+
+select count(comm) from Emp;
+
+-- Display's count for which comm column is NOT NULL. How many rows for which comm column
+is not null that count will be printed. 
+
+
+
+
+
+
+
